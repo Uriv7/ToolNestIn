@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-outfit: 'Outfit', sans-serif;
+  --font-fira: 'Fira Code', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-outfit), sans-serif;
+  background: #060d16;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0b1623; }
+::-webkit-scrollbar-thumb { background: #1eb3f0; border-radius: 3px; }
+
+/* Glass card */
+.glass {
+  background: rgba(11, 22, 35, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(30, 179, 240, 0.15);
+}
+
+/* Tool input */
+.tool-input {
+  background: rgba(6, 13, 22, 0.8);
+  border: 1px solid rgba(30, 179, 240, 0.2);
+  color: #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  font-family: var(--font-outfit);
+  transition: border-color 0.2s;
+}
+.tool-input:focus {
+  outline: none;
+  border-color: #1eb3f0;
+  box-shadow: 0 0 0 2px rgba(30, 179, 240, 0.15);
+}
+
+.tool-output {
+  background: rgba(6, 13, 22, 0.9);
+  border: 1px solid rgba(30, 179, 240, 0.3);
+  color: #48d4ff;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-fira), monospace;
+  font-size: 0.9rem;
+  min-height: 3rem;
+  word-break: break-all;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #1eb3f0, #48d4ff, #83e7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Ad unit placeholder */
+.ad-unit {
+  background: rgba(11, 22, 35, 0.5);
+  border: 1px dashed rgba(30, 179, 240, 0.2);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(148, 163, 184, 0.4);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Animated bg */
+.hero-bg {
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(30, 179, 240, 0.15), transparent),
+              radial-gradient(ellipse 60% 40% at 80% 60%, rgba(8, 50, 77, 0.3), transparent),
+              #060d16;
+}
+
+/* Tool card hover */
+.tool-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.tool-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(30, 179, 240, 0.5);
+  box-shadow: 0 8px 32px rgba(30, 179, 240, 0.12);
+}
+
+/* Category pill */
+.cat-pill {
+  background: rgba(30, 179, 240, 0.1);
+  border: 1px solid rgba(30, 179, 240, 0.2);
+  color: #48d4ff;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+/* Btn */
+.btn-primary {
+  background: linear-gradient(135deg, #068ecf, #1eb3f0);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  font-family: var(--font-outfit);
+}
+.btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
+
+.btn-secondary {
+  background: rgba(30, 179, 240, 0.1);
+  color: #48d4ff;
+  border: 1px solid rgba(30, 179, 240, 0.3);
+  border-radius: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  font-family: var(--font-outfit);
+}
+.btn-secondary:hover { background: rgba(30, 179, 240, 0.2); transform: translateY(-1px); }
+
+/* Copy btn */
+.copy-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #1eb3f0;
+  color: #060d16;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  animation: slideUp 0.2s ease;
+  z-index: 1000;
+}
+@keyframes slideUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
