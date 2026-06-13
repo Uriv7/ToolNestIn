@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Block internal Next.js paths from being indexed
+Disallow: /_next/
+Disallow: /api/
+
+# Explicitly allow tool pages for all bots
+Allow: /tools/
+
+# Google-specific: allow full image indexing for OG images
+User-agent: Googlebot-Image
+Allow: /
+
+# Sitemap location
+Sitemap: https://toolnestin.co.in/sitemap.xml
