@@ -26,7 +26,7 @@ export default function BlogPage() {
       </div>
       <div className="space-y-4">
         {ARTICLES.map(article => (
-          <Link key={article.slug} href={`/blog/${article.slug}`}
+          <Link key={article.slug} href={`/blog/${article.slug}/`}
             className="glass rounded-2xl p-6 block hover:border-blue-500/30 transition group"
             style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
             <div className="flex items-center gap-3 mb-3 flex-wrap">

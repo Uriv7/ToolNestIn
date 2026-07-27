@@ -52,7 +52,7 @@ const CONTENT: Record<string, React.ReactNode> = {
         <li>Not charging GST on services because "it is just a small consultancy"</li>
       </ul>
       <h2>Use the free GST Calculator</h2>
-      <p>Rather than calculating manually every time, use our <Link href="/tools/gst-calculator" className="text-brand-400 hover:underline">free GST Calculator</Link> which handles all four slabs, intrastate/interstate split, and reverse calculations instantly.</p>
+      <p>Rather than calculating manually every time, use our <Link href="/tools/gst-calculator/" className="text-brand-400 hover:underline">free GST Calculator</Link> which handles all four slabs, intrastate/interstate split, and reverse calculations instantly.</p>
     </div>
   ),
   'old-vs-new-tax-regime-2026': (
@@ -67,7 +67,7 @@ const CONTENT: Record<string, React.ReactNode> = {
       <h2>Worked example — ₹12 lakh CTC</h2>
       <p><strong>Old Regime assumptions:</strong> 80C = ₹1.5L, HRA exemption = ₹1L, 80D = ₹25,000, standard deduction = ₹50,000. Total deductions = ₹3.25L. Taxable income = ₹8.75L. Tax = approx ₹87,500.</p>
       <p><strong>New Regime:</strong> Standard deduction = ₹75,000. Taxable income = ₹11.25L. Tax = approx ₹1,12,500.</p>
-      <p>In this example, the Old Regime saves ₹25,000. Use our <Link href="/tools/income-tax-calculator" className="text-brand-400 hover:underline">Income Tax Calculator</Link> to run the comparison with your exact figures.</p>
+      <p>In this example, the Old Regime saves ₹25,000. Use our <Link href="/tools/income-tax-calculator/" className="text-brand-400 hover:underline">Income Tax Calculator</Link> to run the comparison with your exact figures.</p>
       <h2>When the New Regime wins</h2>
       <p>If you are a young earner with minimal investments, no HRA (WFH or own house), and no home loan — the New Regime's lower slab rates and simplicity make it better. Same for income above ₹15L where the 30% slab applies in both regimes and having over ₹4L in deductions is rare.</p>
     </div>
@@ -87,7 +87,7 @@ const CONTENT: Record<string, React.ReactNode> = {
         <li><strong>Shorter tenure:</strong> Moving from 20 to 15 years increases EMI by ~17% but reduces total interest by ~35%.</li>
         <li><strong>Negotiate rate:</strong> Moving from 8.5% to 8.0% on ₹50L saves approximately ₹1.7L over 20 years.</li>
       </ul>
-      <p>Use our <Link href="/tools/emi-calculator" className="text-brand-400 hover:underline">free EMI Calculator</Link> to try different scenarios with your loan details.</p>
+      <p>Use our <Link href="/tools/emi-calculator/" className="text-brand-400 hover:underline">free EMI Calculator</Link> to try different scenarios with your loan details.</p>
     </div>
   ),
   'sip-vs-lumpsum-india': (
@@ -101,7 +101,7 @@ const CONTENT: Record<string, React.ReactNode> = {
       <p>Example: ₹24 lakh invested as a lump sum at 12% CAGR for 20 years = approximately ₹2.32 crore — significantly more than the SIP example above, but only if the 12% CAGR holds from day 1.</p>
       <h2>The honest answer for most Indian investors</h2>
       <p>If you receive a regular salary: SIP. It aligns with when you receive money, removes timing decisions, and builds financial discipline. If you receive a windfall (bonus, inheritance, property sale): split it — invest 40% as lump sum immediately, deploy the rest in a 6-month STP (Systematic Transfer Plan) from a liquid fund.</p>
-      <p>Use our <Link href="/tools/sip-calculator" className="text-brand-400 hover:underline">SIP Calculator</Link> to estimate your corpus, then compare different scenarios.</p>
+      <p>Use our <Link href="/tools/sip-calculator/" className="text-brand-400 hover:underline">SIP Calculator</Link> to estimate your corpus, then compare different scenarios.</p>
     </div>
   ),
   'hra-exemption-guide': (
@@ -122,7 +122,7 @@ const CONTENT: Record<string, React.ReactNode> = {
       <p>If your annual rent payment exceeds ₹1 lakh (₹8,333/month), you must provide your landlord's PAN to your employer to claim HRA. Without it, the IT department may disallow the claim during assessment. This is mandatory even if your landlord is a family member.</p>
       <h2>HRA and home loan together</h2>
       <p>You can claim both HRA exemption and home loan interest deduction under Section 24(b) simultaneously — but only if your rented house and owned house are in different cities. If you live in your own house, you cannot claim HRA regardless of whether you pay a mortgage.</p>
-      <p>Calculate your exact HRA exemption with our <Link href="/tools/hra-calculator" className="text-brand-400 hover:underline">free HRA Calculator</Link>.</p>
+      <p>Calculate your exact HRA exemption with our <Link href="/tools/hra-calculator/" className="text-brand-400 hover:underline">free HRA Calculator</Link>.</p>
     </div>
   ),
   'nps-vs-ppf-india': (
@@ -139,7 +139,7 @@ const CONTENT: Record<string, React.ReactNode> = {
       <p>The NPS equity corpus is dramatically higher, but involves market risk and the mandatory annuity requirement on 40% reduces flexibility.</p>
       <h2>Which should you choose?</h2>
       <p>For most salaried Indians, the optimal strategy is both: max PPF for ₹1.5L guaranteed-safe 80C deduction with full liquidity after 15 years, plus NPS for the extra 80CCD(1B) deduction and higher long-term equity returns for retirement.</p>
-      <p>Use our <Link href="/tools/nps-calculator" className="text-brand-400 hover:underline">NPS Calculator</Link> and <Link href="/tools/ppf-calculator" className="text-brand-400 hover:underline">PPF Calculator</Link> to model both scenarios with your exact numbers.</p>
+      <p>Use our <Link href="/tools/nps-calculator/" className="text-brand-400 hover:underline">NPS Calculator</Link> and <Link href="/tools/ppf-calculator/" className="text-brand-400 hover:underline">PPF Calculator</Link> to model both scenarios with your exact numbers.</p>
     </div>
   ),
 };
@@ -155,7 +155,7 @@ export default function BlogArticle({ params }: { params: { slug: string } }) {
       <nav aria-label="Breadcrumb" className="mb-8 flex items-center gap-2 text-sm text-slate-600">
         <Link href="/" className="hover:text-brand-400 transition">Home</Link>
         <span>›</span>
-        <Link href="/blog" className="hover:text-brand-400 transition">Guides</Link>
+        <Link href="/blog/" className="hover:text-brand-400 transition">Guides</Link>
         <span>›</span>
         <span className="text-slate-500 truncate">{article.title}</span>
       </nav>
@@ -189,7 +189,7 @@ export default function BlogArticle({ params }: { params: { slug: string } }) {
         <h2 className="font-sans font-bold text-slate-200 mb-4">More guides</h2>
         <div className="space-y-3">
           {ARTICLES.filter(a => a.slug !== params.slug).slice(0, 3).map(a => (
-            <Link key={a.slug} href={`/blog/${a.slug}`}
+            <Link key={a.slug} href={`/blog/${a.slug}/`}
               className="flex gap-3 items-start p-3 rounded-xl hover:bg-white/5 transition border border-transparent hover:border-white/10">
               <div>
                 <div className="text-sm font-semibold text-slate-300 hover:text-brand-300">{a.title}</div>

@@ -134,7 +134,7 @@ export default function AboutPage() {
           {TOOLS_HIGHLIGHT.map(t => (
             <Link
               key={t.slug}
-              href={`/tools/${t.slug}`}
+              href={`/tools/${t.slug}/`}
               className="flex gap-3 p-4 rounded-xl bg-white/3 border border-white/10 hover:border-brand-400/30 hover:bg-brand-500/5 transition"
             >
               <div>
@@ -174,7 +174,7 @@ export default function AboutPage() {
         <h2 className="font-sans text-xl font-bold text-slate-200 mb-3">Have a suggestion or found a bug?</h2>
         <p className="text-slate-400 text-sm mb-6">We read every message and typically respond within 24 hours on business days.</p>
         <div className="flex flex-wrap justify-center gap-3">
-          <Link href="/contact" className="btn-primary">Contact Us</Link>
+          <Link href="/contact/" className="btn-primary">Contact Us</Link>
           <Link href="/" className="px-5 py-2.5 rounded-xl border border-white/10 text-slate-400 hover:text-slate-200 hover:border-white/20 transition text-sm font-semibold">Browse All Tools →</Link>
         </div>
       </div>

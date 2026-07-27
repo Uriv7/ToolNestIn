@@ -82,8 +82,8 @@ export default function TermsPage() {
       </div>
 
       <div className="mt-10 flex gap-3 flex-wrap">
-        <Link href="/privacy" className="text-brand-400 text-sm hover:underline">Privacy Policy →</Link>
-        <Link href="/contact" className="text-brand-400 text-sm hover:underline">Contact Us →</Link>
+        <Link href="/privacy/" className="text-brand-400 text-sm hover:underline">Privacy Policy →</Link>
+        <Link href="/contact/" className="text-brand-400 text-sm hover:underline">Contact Us →</Link>
         <Link href="/" className="text-brand-400 text-sm hover:underline">Browse Tools →</Link>
       </div>
     </div>

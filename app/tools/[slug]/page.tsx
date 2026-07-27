@@ -114,8 +114,8 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
     ],
   };
 
-  const waMsg = encodeURIComponent(`Free ${tool.name.split('—')[0].trim()} 🇮🇳 — instant, no login!\nhttps://toolnestin.co.in/tools/${tool.slug}`);
-  const twMsg = encodeURIComponent(`Free ${tool.name.split('—')[0].trim()} for India 🇮🇳\nhttps://toolnestin.co.in/tools/${tool.slug}`);
+  const waMsg = encodeURIComponent(`Free ${tool.name.split('—')[0].trim()} 🇮🇳 — instant, no login!\nhttps://toolnestin.co.in/tools/${tool.slug}/`);
+  const twMsg = encodeURIComponent(`Free ${tool.name.split('—')[0].trim()} for India 🇮🇳\nhttps://toolnestin.co.in/tools/${tool.slug}/`);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
@@ -235,7 +235,7 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
                   const next = TOOLS.find(t => t.slug === w.slug);
                   if (!next) return null;
                   return (
-                    <Link key={w.slug} href={`/tools/${w.slug}`}
+                    <Link key={w.slug} href={`/tools/${w.slug}/`}
                       className="flex items-start gap-3 p-4 rounded-xl bg-brand-500/8 border border-brand-400/20 hover:border-brand-400/50 hover:bg-brand-500/15 transition group">
                       <span className="text-xl shrink-0" aria-hidden="true">{next.icon}</span>
                       <div>
@@ -291,7 +291,7 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
               <h2 className="font-sans text-base font-bold text-slate-200 mb-4">More {tool.category} tools</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {related.map(r => (
-                  <Link key={r.slug} href={`/tools/${r.slug}`}
+                  <Link key={r.slug} href={`/tools/${r.slug}/`}
                     className="flex items-center gap-3 p-3 rounded-xl bg-white/3 border border-white/8 hover:border-brand-400/30 hover:bg-brand-500/5 transition">
                     <span className="text-xl shrink-0" aria-hidden="true">{r.icon}</span>
                     <div className="min-w-0">
@@ -309,7 +309,7 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
             <h2 className="font-sans text-base font-bold text-slate-200 mb-4">Explore more free tools</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               {moreTools.map(r => (
-                <Link key={r.slug} href={`/tools/${r.slug}`}
+                <Link key={r.slug} href={`/tools/${r.slug}/`}
                   className="flex items-center gap-2 p-2.5 rounded-xl bg-white/3 border border-white/8 hover:border-brand-400/20 hover:bg-white/5 transition">
                   <span aria-hidden="true">{r.icon}</span>
                   <span className="text-slate-400 truncate text-xs">{r.name.split('—')[0].trim()}</span>
@@ -345,7 +345,7 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
                 <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Related tools</h3>
                 <div className="space-y-1">
                   {related.map(r => (
-                    <Link key={r.slug} href={`/tools/${r.slug}`}
+                    <Link key={r.slug} href={`/tools/${r.slug}/`}
                       className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition group">
                       <span className="text-base" aria-hidden="true">{r.icon}</span>
                       <span className="text-xs text-slate-400 group-hover:text-slate-200 transition leading-tight">
@@ -374,7 +374,7 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
             {/* Guides link — shows site is content-rich */}
             <div className="glass rounded-2xl p-5">
               <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Learn more</h3>
-              <Link href="/blog" className="text-brand-400 text-sm hover:underline block">
+              <Link href="/blog/" className="text-brand-400 text-sm hover:underline block">
                 Read our free guides →
               </Link>
               <p className="text-xs text-slate-600 mt-1">GST, Income Tax, EMI, SIP and more</p>

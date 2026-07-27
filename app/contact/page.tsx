@@ -105,7 +105,7 @@ export default function ContactPage() {
 
       <div className="mt-8 flex gap-4">
         <Link href="/" className="btn-secondary text-sm">← Browse Tools</Link>
-        <Link href="/about" className="btn-secondary text-sm">About ToolNestIn</Link>
+        <Link href="/about/" className="btn-secondary text-sm">About ToolNestIn</Link>
       </div>
     </div>
   );

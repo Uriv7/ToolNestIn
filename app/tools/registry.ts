@@ -25,7 +25,7 @@ export const TOOLS: Tool[] = [
     keywords: ['gst calculator india 2026','gst calculator online free','cgst sgst calculator','gst inclusive exclusive','gst 18 percent calculator','goods services tax calculator india','gst slab calculator','gst amount calculator'],
     longDescription: `Calculate GST for all Indian tax slabs instantly. Supports GST-exclusive (adding GST to base price) and GST-inclusive (extracting GST from MRP). Shows CGST+SGST split for intra-state and IGST for inter-state transactions.`,
     workflow: [{ slug: 'number-to-words', label: 'Amount in Words', reason: 'Convert GST total to words for invoice/cheque' }, { slug: 'percentage-calculator', label: 'Percentage Calculator', reason: 'Verify discount or margin calculations' }],
-    expertNote: `Nder GST Council circular 2026, cloud computing services for SaaS companies attract 18% GST under IT services category. For B2B transactions, ensure GSTIN of buyer is captured to claim ITC.`,
+    expertNote: `Under GST Council circular 2026, cloud computing services for SaaS companies attract 18% GST under IT services category. For B2B transactions, ensure GSTIN of buyer is captured to claim ITC.`,
     faqs: [
       { q: 'What are GST slabs in India 2026?', a: '0% (healthcare, education), 5% (essential food, medicines), 12% (processed food, computers), 18% (most services, electronics, restaurants), 28% (luxury cars, tobacco, aerated drinks).' },
       { q: 'How to calculate CGST and SGST?', a: 'For intra-state: CGST = GST rate/2, SGST = GST rate/2. At 18% GST: CGST = 9%, SGST = 9%. For inter-state transactions, full rate applies as IGST.' },
@@ -41,7 +41,7 @@ export const TOOLS: Tool[] = [
     keywords: ['emi calculator india 2026','home loan emi calculator sbi hdfc','car loan emi calculator','personal loan emi calculator','loan amortization schedule india','emi formula calculator','education loan emi'],
     longDescription: `Three calculation modes: (1) What is X% of a number — for GST amounts, exam marks, discount values; (2) What percentage is X of Y — for result percentages and market share; (3) Percentage change between two values — for salary hike, price changes, or portfolio returns. Instant results with the formula displayed so you can learn how to calculate percentage manually.`,
     workflow: [{ slug: 'percentage-calculator', label: 'Interest Rate Impact', reason: 'See what a 0.5% rate change does to total interest' }, { slug: 'ctc-calculator', label: 'Take-Home Calculator', reason: 'Ensure EMI is below 40% of take-home salary' }],
-    expertNote: `BI April 2026: Repo rate at 5.75%. SBI EBLR = 8.40%. For floating rate loans linked to EBLR, any repo rate cut passes through within 3 months. If on MCLR-linked loan, switch to EBLR for better rate transmission.`,
+    expertNote: `RBI April 2026: Repo rate at 5.75%. SBI EBLR = 8.40%. For floating rate loans linked to EBLR, any repo rate cut passes through within 3 months. If on MCLR-linked loan, switch to EBLR for better rate transmission.`,
     faqs: [
       { q: 'What is the EMI formula?', a: 'EMI = [P × r × (1+r)^n] / [(1+r)^n - 1] where P = principal, r = monthly rate (annual/12/100), n = months.' },
       { q: 'Should I reduce EMI or tenure on prepayment?', a: 'Reducing tenure saves more interest overall. Reducing EMI improves monthly cash flow. If rate > 8.5%, reducing tenure is mathematically superior.' },
@@ -56,7 +56,7 @@ export const TOOLS: Tool[] = [
     keywords: ['income tax calculator india 2026','old vs new tax regime calculator','income tax calculator ay 2026-27','salary tax calculator india','new tax regime 2026 calculator','tax saving calculator india','income tax slab 2026'],
     longDescription: `Calculate income tax for AY 2026-27 under both Old and New Regime. Enter salary, all deductions (80C, HRA, NPS, home loan interest) and instantly see which regime saves more with a side-by-side comparison.`,
     workflow: [{ slug: 'ctc-calculator', label: 'CTC to In-Hand', reason: 'Find monthly take-home after tax deduction' }, { slug: 'ppf-calculator', label: 'PPF Calculator', reason: 'Invest 80C savings in PPF for tax-free returns' }],
-    expertNote: `Udget 2025-26: New regime standard deduction raised to ₹75,000. Section 87A rebate increased to ₹25,000 for income up to ₹7 lakh — making net tax zero for income up to ~₹7.75 lakh in new regime.`,
+    expertNote: `Budget 2025-26: New regime standard deduction raised to ₹75,000. Section 87A rebate increased to ₹25,000 for income up to ₹7 lakh — making net tax zero for income up to ~₹7.75 lakh in new regime.`,
     faqs: [
       { q: 'Which tax regime is better in 2026?', a: 'New regime is better if deductions < ₹3.75 lakh. Old regime wins if you have maxed 80C (₹1.5L) + HRA + home loan interest + NPS (₹50K).' },
       { q: 'Is income up to ₹7 lakh tax-free?', a: 'Yes, under Section 87A rebate, taxable income up to ₹7 lakh pays zero tax under new regime (after ₹75,000 standard deduction from salary).' },
@@ -71,7 +71,7 @@ export const TOOLS: Tool[] = [
     keywords: ['sip calculator india','sip return calculator','mutual fund sip calculator monthly','lump sum calculator india','sip vs fd calculator','sip calculator 10 years india','monthly sip returns'],
     longDescription: `Calculate future value of SIP (Systematic Investment Plan) or lump sum mutual fund investment. Interactive chart shows year-by-year wealth growth. Compare equity SIP returns vs FD or PPF.`,
     workflow: [{ slug: 'ppf-calculator', label: 'PPF Calculator', reason: 'Compare SIP returns vs guaranteed PPF returns' }, { slug: 'fd-calculator', label: 'FD Calculator', reason: 'Compare SIP vs Fixed Deposit returns' }],
-    expertNote: `EBI data: Average 10-year SIP return for Nifty 50 index funds is 12-13% annually. ELSS SIPs qualify for Section 80C deduction up to ₹1.5 lakh with shortest lock-in (3 years) among 80C instruments.`,
+    expertNote: `SEBI data: Average 10-year SIP return for Nifty 50 index funds is 12-13% annually. ELSS SIPs qualify for Section 80C deduction up to ₹1.5 lakh with shortest lock-in (3 years) among 80C instruments.`,
     faqs: [
       { q: 'What return rate to assume for SIP?', a: '12% for large-cap equity, 14-16% for mid/small cap, 8% for debt funds, 10% for balanced funds. These are historical — not guaranteed.' },
       { q: 'Is SIP better than FD over 10 years?', a: 'Historically yes — equity SIPs have returned 12-15% vs FD at 6-7%. But SIPs carry market risk. For goals > 7 years, SIP is generally preferred.' },
@@ -112,7 +112,7 @@ export const TOOLS: Tool[] = [
     keywords: ['ctc to in hand salary calculator india','take home salary calculator india 2026','gross to net salary calculator india','monthly salary from ctc','salary breakup calculator india','in hand salary calculator new regime'],
     longDescription: `Calculate exact monthly in-hand salary from CTC. Accounts for Employee PF (12%), income tax TDS under old/new regime, professional tax, and standard deduction. Shows complete monthly salary breakup.`,
     workflow: [{ slug: 'income-tax-calculator', label: 'Tax Calculator', reason: 'Detailed old vs new regime comparison' }, { slug: 'emi-calculator', label: 'EMI Calculator', reason: 'Plan loan EMI based on take-home salary' }],
-    expertNote: `Ule of thumb: EMI should not exceed 40% of monthly take-home. Banks reject applications where EMI-to-income ratio exceeds 50-55%.`,
+    expertNote: `Rule of thumb: EMI should not exceed 40% of monthly take-home. Banks reject applications where EMI-to-income ratio exceeds 50-55%.`,
     faqs: [
       { q: 'Difference between CTC and in-hand salary?', a: 'CTC includes employer PF (12%), gratuity (~4.8%), and benefits. In-hand = Gross Salary − Employee PF − Income Tax TDS − Professional Tax.' },
       { q: 'What % of CTC is take-home?', a: 'Typically 65-75% of CTC. ₹12 LPA CTC → ₹65,000-₹75,000/month take-home depending on tax regime and deductions.' },
@@ -152,7 +152,7 @@ export const TOOLS: Tool[] = [
     keywords: ['bmi calculator india','bmi calculator kg cm','bmi for indians','healthy bmi indian adults','bmi obesity cutoff india','body mass index calculator metric','bmi calculator asian'],
     longDescription: `Calculate your Body Mass Index (BMI) using both WHO international standards and Asia-Pacific cutoffs recommended for Indian adults. For South Asians, the ICMR recommends lower cutoffs — overweight begins at BMI 23 (not 25) and obesity at 27.5 (not 30). Shows healthy weight range for your height, BMI category, and what it means for your health.`,
     workflow: [{ slug: 'calorie-calculator', label: 'Calorie Calculator', reason: 'Set daily calorie target based on your BMI goal' }],
-    expertNote: `CMR 2024 guidelines: For Indians, overweight = BMI ≥23 (not ≥25), obese Grade I = ≥25 (not ≥30). Standard WHO cutoffs underestimate cardiovascular and diabetes risk in South Asians.`,
+    expertNote: `ICMR 2024 guidelines: For Indians, overweight = BMI ≥23 (not ≥25), obese Grade I = ≥25 (not ≥30). Standard WHO cutoffs underestimate cardiovascular and diabetes risk in South Asians.`,
     faqs: [
       { q: 'Is standard BMI accurate for Indians?', a: 'No. Indians develop metabolic complications at lower BMI. Indian overweight threshold is BMI ≥23, obese at ≥25 (ICMR 2024).' },
       { q: 'How is BMI calculated?', a: 'BMI = Weight(kg) ÷ Height²(m²). For imperial: BMI = 703 × Weight(lbs) ÷ Height²(inches²).' },
@@ -315,7 +315,7 @@ export const TOOLS: Tool[] = [
   {
     slug: 'word-counter',
     name: 'Word Counter & Character Count Online',
-    description: `Eal-time word count, character count, sentence count, reading time. No paste limit. Works offline.`,
+    description: `Real-time word count, character count, sentence count, reading time. No paste limit. Works offline.`,
     category: 'Text Tool', icon: '📊', hub: 'text',
     keywords: ['word counter online free','character counter instagram','words in essay counter','reading time calculator','word count checker no limit','character count twitter linkedin'],
     longDescription: `Count words, characters (with and without spaces), sentences, paragraphs, and reading time for any text. Displays average word length, most frequent words, and keyword density — useful for SEO content writers optimising for specific keyword frequencies. Shows reading time at 200 wpm (standard) and 130 wpm (slow reader), and speaking time at 130 wpm for presentations.`,
@@ -381,7 +381,7 @@ export const TOOLS: Tool[] = [
     keywords: ['number to words in rupees','amount in words india','number to words for cheque','lakhs crores words','rupees in words converter','amount words invoice india'],
     longDescription: `Convert numbers to words in Indian numbering (Lakhs, Crores) or international system. Includes Rupees and Paise for cheque writing and legal documents.`,
     workflow: [{ slug: 'gst-calculator', label: 'GST Calculator', reason: 'Get GST-inclusive total then convert to words' }],
-    expertNote: `Nder Section 20 of Negotiable Instruments Act 1881, if numbers and words differ, written words take precedence. Always add "Only" at end to prevent tampering.`,
+    expertNote: `Under Section 20 of Negotiable Instruments Act 1881, if numbers and words differ, written words take precedence. Always add "Only" at end to prevent tampering.`,
     faqs: [
       { q: 'Write ₹1,23,456 in words for cheque?', a: 'One Lakh Twenty-Three Thousand Four Hundred and Fifty-Six Rupees Only.' },
       { q: '1 Crore in international system?', a: '1 Crore = 10,000,000 = Ten Million.' },
@@ -476,10 +476,10 @@ const ADDITIONAL_TOOLS: Tool[] = [
   {
     slug: 'html-formatter',
     name: 'HTML Formatter & Minifier Online',
-    description: `Eautify minified HTML and minify HTML to remove whitespace. Clean, indented output with void element support.`,
+    description: `Beautify minified HTML and minify HTML to remove whitespace. Clean, indented output with void element support.`,
     category: 'Developer Tool', icon: '🌐', hub: 'developer',
     keywords: ['html formatter online','html beautifier free','html minifier online','format html code','html pretty print','clean html online'],
-    longDescription: `Eautify minified HTML code with proper indentation or minify HTML to reduce file size by removing whitespace and comments.`,
+    longDescription: `Beautify minified HTML code with proper indentation or minify HTML to reduce file size by removing whitespace and comments.`,
     workflow: [{ slug: 'json-formatter', label: 'JSON Formatter', reason: 'Format JSON in API responses' }],
     faqs: [
       { q: 'Does minifying HTML break the page?', a: 'No. HTML minification removes whitespace between tags — the browser renders identical output. Saves 10-30% file size.' },
@@ -605,7 +605,7 @@ const NEW_TOOLS_40: Tool[] = [
     keywords: ['hra calculator india 2026','house rent allowance calculator','hra exemption calculator','hra tax exemption section 10','hra calculator metro non metro','hra calculation salary'],
     longDescription: `Calculate HRA tax exemption under Section 10(13A) instantly. Compares all three HRA exemption criteria and picks the minimum (least of: actual HRA received, 50%/40% of basic, rent paid minus 10% basic). Metro cities (Delhi, Mumbai, Kolkata, Chennai) get 50% basic; others get 40%.`,
     workflow: [{ slug: 'income-tax-calculator', label: 'Income Tax Calculator', reason: 'Apply HRA exemption to compute final tax' }, { slug: 'ctc-calculator', label: 'CTC Calculator', reason: 'Find your HRA component from total CTC' }],
-    expertNote: `F you pay rent above ₹1 lakh/year, landlord PAN is mandatory for HRA claim (Section 10(13A) rule). Without it, the entire HRA becomes taxable.`,
+    expertNote: `If you pay rent above ₹1 lakh/year, landlord PAN is mandatory for HRA claim (Section 10(13A) rule). Without it, the entire HRA becomes taxable.`,
     faqs: [
       { q: 'How is HRA exemption calculated?', a: 'Minimum of: (1) Actual HRA received, (2) 50% of basic+DA for metro/40% for non-metro, (3) Rent paid minus 10% of basic+DA.' },
       { q: 'Can I claim HRA and home loan interest together?', a: 'Yes — if your rented house and owned house are in different cities. You can claim both HRA exemption and home loan interest deduction under Section 24(b).' },
@@ -620,7 +620,7 @@ const NEW_TOOLS_40: Tool[] = [
     keywords: ['nps calculator india 2026','national pension system calculator','nps returns calculator','nps tier 1 calculator','nps 80ccd calculator','nps corpus calculator retirement'],
     longDescription: `Calculate NPS corpus at retirement with assumed returns for equity (E), corporate bonds (C), and government securities (G). Shows annuity vs lump sum split at age 60. Includes tax benefit under Section 80CCD(1B) — additional ₹50,000 deduction over and above 80C limit.`,
     workflow: [{ slug: 'ppf-calculator', label: 'PPF Calculator', reason: 'Compare NPS vs PPF for retirement' }, { slug: 'income-tax-calculator', label: 'Tax Calculator', reason: 'See how 80CCD(1B) saves additional tax' }],
-    expertNote: `PS 80CCD(1B) gives ₹50,000 additional deduction beyond ₹1.5L 80C limit. At 30% tax slab, this saves ₹15,600/year extra — effectively making NPS the highest tax-saving instrument.`,
+    expertNote: `NPS 80CCD(1B) gives ₹50,000 additional deduction beyond ₹1.5L 80C limit. At 30% tax slab, this saves ₹15,600/year extra — effectively making NPS the highest tax-saving instrument.`,
     faqs: [
       { q: 'What is the NPS return rate?', a: 'Historical: Equity (E) ~12-14%, Corporate Bonds (C) ~9-10%, Govt Securities (G) ~8-9%. Active choice allows up to 75% equity allocation till age 50.' },
       { q: 'How much of NPS corpus is tax-free at retirement?', a: '60% lump sum withdrawal at age 60 is completely tax-free. Remaining 40% must be used to buy annuity (monthly pension), which is taxable as income.' },
@@ -635,7 +635,7 @@ const NEW_TOOLS_40: Tool[] = [
     keywords: ['gratuity calculator india','gratuity calculation formula','gratuity eligibility 5 years','gratuity tax exemption 2026','gratuity for private employees','gratuity payment act calculator'],
     longDescription: `Calculate exact gratuity amount under Payment of Gratuity Act 1972. Formula: (Last Drawn Salary × 15/26 × Years of Service). Government employee formula differs. Shows tax-free limit of ₹20 lakh (as of 2024 amendment) and taxable portion.`,
     workflow: [{ slug: 'ctc-calculator', label: 'CTC Calculator', reason: 'Find your last drawn basic + DA for gratuity calculation' }],
-    expertNote: `Inimum 5 years continuous service required. Part year ≥ 6 months counts as full year. Tax-free limit: ₹20 lakh. Gratuity above ₹20 lakh is taxable as salary income.`,
+    expertNote: `Minimum 5 years continuous service required. Part year ≥ 6 months counts as full year. Tax-free limit: ₹20 lakh. Gratuity above ₹20 lakh is taxable as salary income.`,
     faqs: [
       { q: 'Gratuity formula for private employees?', a: 'Gratuity = (Basic + DA) × 15/26 × Completed Years. Example: ₹50,000 basic, 10 years: 50,000 × 15/26 × 10 = ₹2,88,461.' },
       { q: 'Is gratuity paid before 5 years?', a: 'No, minimum 5 years of continuous service is required. Exception: in case of death or disability, gratuity is paid regardless of service duration.' },
@@ -664,7 +664,7 @@ const NEW_TOOLS_40: Tool[] = [
     keywords: ['sukanya samriddhi calculator 2026','ssy calculator india','sukanya yojana maturity calculator','girl child savings scheme calculator','ssy 8.2 percent calculator','sukanya samriddhi yojana returns'],
     longDescription: `Calculate Sukanya Samriddhi Yojana (SSY) maturity at current 8.2% interest rate. Account matures when girl turns 21 (or at marriage after 18). Annual deposit: ₹250 minimum, ₹1.5 lakh maximum. EEE tax status — all returns tax-free.`,
     workflow: [{ slug: 'ppf-calculator', label: 'PPF Calculator', reason: 'Compare SSY vs PPF returns' }, { slug: 'income-tax-calculator', label: 'Tax Calculator', reason: 'SSY qualifies for 80C deduction up to ₹1.5L' }],
-    expertNote: `SY at 8.2% beats PPF (7.1%) by 1.1%. For a girl child, maximum ₹1.5L/year for 15 years in SSY compounds to over ₹69 lakh at maturity — the best risk-free scheme in India today.`,
+    expertNote: `SSY at 8.2% beats PPF (7.1%) by 1.1%. For a girl child, maximum ₹1.5L/year for 15 years in SSY compounds to over ₹69 lakh at maturity — the best risk-free scheme in India today.`,
     faqs: [
       { q: 'When can I open SSY account?', a: 'From birth of the girl child until she turns 10. Account matures when she turns 21 or at marriage after age 18.' },
       { q: 'Can I withdraw SSY before maturity?', a: '50% can be withdrawn after girl turns 18 for higher education. Premature closure allowed for marriage after 18 or medical emergency.' },
@@ -679,7 +679,7 @@ const NEW_TOOLS_40: Tool[] = [
     keywords: ['capital gains tax calculator india 2026','ltcg stcg calculator','equity capital gains tax','property capital gains calculator india','mutual fund capital gains tax','indexation calculator india'],
     longDescription: `Calculate Short-Term Capital Gains (STCG) and Long-Term Capital Gains (LTCG) tax for equity, equity mutual funds, debt funds, property, gold, and other assets. LTCG on equity: 12.5% above ₹1.25 lakh (Budget 2024). Includes indexation benefit removal for debt funds post-2023.`,
     workflow: [{ slug: 'income-tax-calculator', label: 'Income Tax Calculator', reason: 'Add capital gains to total income for tax computation' }],
-    expertNote: `Udget 2024 change: LTCG on equity funds increased to 12.5% (from 10%), ₹1.25L exemption raised from ₹1L. STCG on equity raised to 20% (from 15%). Debt funds: indexation benefit removed; gains taxed at slab rate.`,
+    expertNote: `Budget 2024 change: LTCG on equity funds increased to 12.5% (from 10%), ₹1.25L exemption raised from ₹1L. STCG on equity raised to 20% (from 15%). Debt funds: indexation benefit removed; gains taxed at slab rate.`,
     faqs: [
       { q: 'LTCG tax on equity mutual funds 2026?', a: '12.5% on gains above ₹1.25 lakh per year. If you sell equity funds after 1 year, the first ₹1.25L in gains is tax-free every financial year.' },
       { q: 'How is STCG on equity calculated?', a: 'STCG (sale within 1 year) on equity = 20% flat on profit. No indexation benefit. Added directly to tax liability.' },
@@ -694,7 +694,7 @@ const NEW_TOOLS_40: Tool[] = [
     keywords: ['home loan eligibility calculator india','how much home loan can i get','loan eligibility based on salary','home loan amount calculator salary','bank loan eligibility calculator india','foir calculator india'],
     longDescription: `Calculate maximum home loan eligibility based on your monthly income, existing EMI obligations, and bank FOIR (Fixed Obligation to Income Ratio) norms. Most Indian banks allow 40-50% FOIR. Shows loan amount, EMI, and tenure options.`,
     workflow: [{ slug: 'emi-calculator', label: 'EMI Calculator', reason: 'Calculate exact EMI for your eligible loan amount' }, { slug: 'ctc-calculator', label: 'CTC Calculator', reason: 'Find your net take-home for eligibility check' }],
-    expertNote: `BI, HDFC, ICICI norms: FOIR should not exceed 50% of net monthly income. Banks multiply net monthly income by 60-72 to get approximate loan eligibility (for 20-year tenure at ~8.5%).`,
+    expertNote: `RBI, HDFC, ICICI norms: FOIR should not exceed 50% of net monthly income. Banks multiply net monthly income by 60-72 to get approximate loan eligibility (for 20-year tenure at ~8.5%).`,
     faqs: [
       { q: 'What is FOIR in home loans?', a: 'Fixed Obligation to Income Ratio — ratio of all monthly EMIs to net monthly income. Most banks cap FOIR at 40-50%. If your salary is ₹1L and existing EMIs are ₹20K, FOIR is 20% — you can afford additional EMI up to ₹30K.' },
       { q: 'How much home loan can I get on ₹1 lakh salary?', a: 'Approximately ₹55-65 lakh based on 50% FOIR, 8.5% rate, 20-year tenure. Exact amount depends on existing obligations and bank policy.' },
@@ -709,7 +709,7 @@ const NEW_TOOLS_40: Tool[] = [
     keywords: ['bmi calculator for kids india','child bmi calculator age','bmi percentile calculator children','pediatric bmi calculator india','iap growth chart calculator','child healthy weight calculator'],
     longDescription: `Calculate BMI percentile for children aged 2-18 using WHO Child Growth Standards and Indian Academy of Pediatrics (IAP) 2015 growth charts. Shows underweight, normal, overweight, and obese classification with age-gender-specific percentile.`,
     workflow: [{ slug: 'calorie-calculator', label: 'Calorie Calculator', reason: 'Find calorie targets for healthy weight' }, { slug: 'bmi-calculator', label: 'Adult BMI Calculator', reason: 'Calculate adult BMI (18+)' }],
-    expertNote: `AP 2015 growth charts use Indian-specific data. A child is classified as overweight at BMI >85th percentile and obese at >95th percentile — different from adult cutoffs.`,
+    expertNote: `IAP 2015 growth charts use Indian-specific data. A child is classified as overweight at BMI >85th percentile and obese at >95th percentile — different from adult cutoffs.`,
     faqs: [
       { q: 'Is adult BMI formula same for children?', a: 'Same formula (kg/m²) but interpretation is age and sex-specific for children — using percentile charts, not fixed cutoffs. A BMI of 18 might be obese for a 6-year-old but underweight for a 15-year-old.' },
       { q: 'Healthy BMI percentile for children?', a: 'Between 5th and 85th percentile. Below 5th = underweight. 85th-95th = overweight. Above 95th = obese.' },
@@ -749,7 +749,7 @@ const NEW_TOOLS_40: Tool[] = [
     keywords: ['pregnancy weight gain calculator india','pregnancy weight calculator by week','how much weight to gain during pregnancy','pregnancy bmi weight gain','normal weight gain pregnancy india'],
     longDescription: `Calculate recommended total and weekly pregnancy weight gain based on pre-pregnancy BMI following ACOG (American College of Obstetricians and Gynecologists) guidelines. Shows week-by-week healthy weight range across all three trimesters.`,
     workflow: [{ slug: 'bmi-calculator', label: 'BMI Calculator', reason: 'Calculate pre-pregnancy BMI for accurate recommendation' }],
-    expertNote: `OGSI (Federation of Obstetric and Gynaecological Societies of India) recommends following ACOG guidelines for Indian women: underweight (<18.5 BMI) should gain 12.5-18 kg; normal (18.5-24.9) should gain 11.5-16 kg.`,
+    expertNote: `FOGSI (Federation of Obstetric and Gynaecological Societies of India) recommends following ACOG guidelines for Indian women: underweight (<18.5 BMI) should gain 12.5-18 kg; normal (18.5-24.9) should gain 11.5-16 kg.`,
     faqs: [
       { q: 'How much weight gain is normal in pregnancy for Indians?', a: 'Depends on pre-pregnancy BMI. Normal BMI: 11.5-16 kg total. Underweight: 12.5-18 kg. Overweight: 7-11.5 kg. Obese: 5-9 kg.' },
       { q: 'When does pregnancy weight gain start?', a: 'First trimester: 1-2 kg total. Second and third trimesters: 0.3-0.5 kg per week for normal BMI.' },
@@ -772,7 +772,7 @@ const NEW_TOOLS_40: Tool[] = [
   {
     slug: 'xml-formatter',
     name: 'XML Formatter & Validator Online',
-    description: `Eautify and validate XML with syntax highlighting. Minify XML to reduce payload size. Error detection with line numbers.`,
+    description: `Beautify and validate XML with syntax highlighting. Minify XML to reduce payload size. Error detection with line numbers.`,
     category: 'Developer Tool', icon: '🗂️', hub: 'developer',
     keywords: ['xml formatter online','xml beautifier free','xml validator online','xml pretty print','format xml online','xml minifier online','xml syntax checker'],
     longDescription: `Validate, beautify, and minify XML with error detection. Supports both formatting (adding indentation) and minification (removing whitespace). Error messages include line numbers. All processing client-side.`,
@@ -850,10 +850,10 @@ const NEW_TOOLS_40: Tool[] = [
   {
     slug: 'code-minifier',
     name: 'CSS & JavaScript Minifier Online',
-    description: `Inify CSS and JavaScript to reduce file size. Shows original vs minified size and % reduction. Download minified file.`,
+    description: `Minify CSS and JavaScript to reduce file size. Shows original vs minified size and % reduction. Download minified file.`,
     category: 'Developer Tool', icon: '🗜️', hub: 'developer',
     keywords: ['css minifier online','javascript minifier online','js css minifier free','minify js css online','code compressor online','reduce file size css js'],
-    longDescription: `Inify CSS and JavaScript files by removing whitespace, comments, and unnecessary characters. Shows before/after file size and compression percentage. Download minified file directly. All processing client-side.`,
+    longDescription: `Minify CSS and JavaScript files by removing whitespace, comments, and unnecessary characters. Shows before/after file size and compression percentage. Download minified file directly. All processing client-side.`,
     workflow: [{ slug: 'html-formatter', label: 'HTML Minifier', reason: 'Minify HTML as well for complete front-end optimization' }],
     faqs: [
       { q: 'How much does minification reduce file size?', a: 'Typically 15-30% for CSS, 20-40% for JavaScript. Combined with Gzip compression, effective reduction is 60-80%.' },
@@ -866,7 +866,7 @@ const NEW_TOOLS_40: Tool[] = [
     description: `Search and reference all HTTP status codes (1xx-5xx). Meaning, use case, and common causes for each code.`,
     category: 'Developer Tool', icon: '🌐', hub: 'developer',
     keywords: ['http status codes list','404 meaning http','http error codes reference','http 200 301 404 500 meaning','rest api status codes','http response codes complete list'],
-    longDescription: `Omplete interactive reference for all HTTP status codes (100-599). Search by code or keyword. Shows official meaning, common use cases, and debugging tips for 1xx (informational), 2xx (success), 3xx (redirect), 4xx (client error), and 5xx (server error).`,
+    longDescription: `Complete interactive reference for all HTTP status codes (100-599). Search by code or keyword. Shows official meaning, common use cases, and debugging tips for 1xx (informational), 2xx (success), 3xx (redirect), 4xx (client error), and 5xx (server error).`,
     workflow: [{ slug: 'json-formatter', label: 'JSON Formatter', reason: 'Format JSON response body from API calls' }],
     faqs: [
       { q: '404 vs 410 HTTP status?', a: '404: resource not found (may return later). 410: resource permanently gone. Use 410 for deleted URLs to speed up Google deindexing.' },
@@ -889,10 +889,10 @@ const NEW_TOOLS_40: Tool[] = [
   {
     slug: 'string-utilities',
     name: 'String Utilities — Trim, Replace, Extract, Sort Lines',
-    description: `Owerful text manipulation: trim whitespace, find & replace, sort lines A-Z, extract emails/URLs/numbers from text.`,
+    description: `Powerful text manipulation: trim whitespace, find & replace, sort lines A-Z, extract emails/URLs/numbers from text.`,
     category: 'Text Tool', icon: '🔧', hub: 'text',
     keywords: ['string utilities online','text manipulation tool','sort lines alphabetically online','extract emails from text','find replace online tool','trim whitespace online'],
-    longDescription: `Ll-in-one text manipulation: trim leading/trailing spaces, find & replace (with regex support), sort lines alphabetically or reverse, extract emails, URLs, phone numbers, or numbers from any text block.`,
+    longDescription: `All-in-one text manipulation: trim leading/trailing spaces, find & replace (with regex support), sort lines alphabetically or reverse, extract emails, URLs, phone numbers, or numbers from any text block.`,
     workflow: [{ slug: 'remove-duplicates', label: 'Remove Duplicates', reason: 'Deduplicate sorted list' }, { slug: 'word-counter', label: 'Word Counter', reason: 'Count after manipulation' }],
     faqs: [
       { q: 'Can it extract all email addresses from a text?', a: 'Yes. Paste any text and use the "Extract Emails" mode to pull all valid email addresses into a clean list.' },
@@ -913,10 +913,10 @@ const NEW_TOOLS_40: Tool[] = [
   {
     slug: 'emoji-picker',
     name: 'Emoji Picker & Emoji Copy — All Emojis 2026',
-    description: `Rowse and copy any emoji with one click. Search by name or category. Copy emoji code for use in HTML, WhatsApp, Instagram.`,
+    description: `Browse and copy any emoji with one click. Search by name or category. Copy emoji code for use in HTML, WhatsApp, Instagram.`,
     category: 'Text Tool', icon: '😀', hub: 'text',
     keywords: ['emoji picker copy paste','emoji search online','copy emoji online','all emojis list 2026','emoji code html','whatsapp emoji picker','emoji keyboard online'],
-    longDescription: `Rowse all 3,600+ emojis by category (smileys, animals, food, travel, objects, symbols, flags). Search by emoji name. One-click copy. Shows HTML code, Unicode code point, and shortcode.`,
+    longDescription: `Browse all 3,600+ emojis by category (smileys, animals, food, travel, objects, symbols, flags). Search by emoji name. One-click copy. Shows HTML code, Unicode code point, and shortcode.`,
     workflow: [{ slug: 'fancy-text', label: 'Fancy Text', reason: 'Combine styled text with emojis for Instagram' }, { slug: 'hashtag-generator', label: 'Hashtag Generator', reason: 'Add relevant hashtags to your emoji post' }],
     faqs: [
       { q: 'Do all emojis work on WhatsApp India?', a: 'WhatsApp supports all Unicode 15.0 emojis on Android and iOS. Web WhatsApp shows emojis based on your OS. Older Android phones may show squares for newest emojis.' },
@@ -931,7 +931,7 @@ const NEW_TOOLS_40: Tool[] = [
     keywords: ['gst number validator','gstin validator online','verify gst number india','gst number format checker','gstin format validation','gst registration number check'],
     longDescription: `Validate GSTIN (GST Identification Number) format structure and extract embedded information: state code (first 2 digits), PAN (characters 3-12), entity type (13th character), and check digit. Privacy-safe — only format validation, no government API call.`,
     workflow: [{ slug: 'pan-validator', label: 'PAN Validator', reason: 'Validate the embedded PAN within GSTIN' }, { slug: 'gst-calculator', label: 'GST Calculator', reason: 'Calculate GST for validated business' }],
-    expertNote: `STIN structure: 2-digit state code + 10-char PAN + 1-digit entity number (1-9 for individuals, A-Z for others) + Z (default) + 1 check digit. A valid format does NOT confirm active GST registration.`,
+    expertNote: `GSTIN structure: 2-digit state code + 10-char PAN + 1-digit entity number (1-9 for individuals, A-Z for others) + Z (default) + 1 check digit. A valid format does NOT confirm active GST registration.`,
     faqs: [
       { q: `GSTIN vs GSTN — what\'s the difference?`, a: 'GSTN (Goods and Services Tax Network) is the IT backbone for GST. GSTIN is the 15-character identification number assigned to every registered taxpayer.' },
       { q: 'How to find your state code from GSTIN?', a: 'First two digits: 01=J&K, 02=HP, 03=Punjab, 04=Chandigarh, 06=Haryana, 07=Delhi, 08=Rajasthan, 09=UP, 27=Maharashtra, 29=Karnataka, 33=Tamil Nadu, 36=Telangana.' },
@@ -971,7 +971,7 @@ const NEW_TOOLS_40: Tool[] = [
     keywords: ['mutual fund xirr calculator','sip xirr calculator india','mutual fund return calculator','actual return mutual fund','mf return comparison calculator','cagr xirr calculator'],
     longDescription: `Calculate XIRR (Extended Internal Rate of Return) — the true annualised return for SIP investments with irregular cash flows. Enter any combination of investment dates and amounts. XIRR is the industry-standard metric used by AMFI and SEBI for SIP performance.`,
     workflow: [{ slug: 'sip-calculator', label: 'SIP Calculator', reason: 'Estimate future SIP returns before investing' }],
-    expertNote: `AGR works for lump sums. XIRR is accurate for SIPs with multiple cash flows. A fund showing 15% CAGR on NAV might give you only 12% XIRR on your SIP due to timing of purchases.`,
+    expertNote: `CAGR works for lump sums. XIRR is accurate for SIPs with multiple cash flows. A fund showing 15% CAGR on NAV might give you only 12% XIRR on your SIP due to timing of purchases.`,
     faqs: [
       { q: `XIRR vs CAGR — what\'s the difference?`, a: 'CAGR uses only start and end values. XIRR accounts for all intermediate cash flows (each SIP instalment). For SIP investments, XIRR is always more accurate.' },
       { q: 'What is a good XIRR for mutual funds?', a: 'Equity funds: XIRR > 12% is good over 5+ years. Debt funds: 7-9% XIRR. ELSS: 12-15% XIRR over 5+ year horizon.' },
@@ -1045,10 +1045,10 @@ const NEW_TOOLS_40: Tool[] = [
   {
     slug: 'stopwatch-timer',
     name: 'Online Stopwatch & Countdown Timer',
-    description: `Recise stopwatch with lap times. Countdown timer with alarm. Works offline as a Progressive Web App.`,
+    description: `Precise stopwatch with lap times. Countdown timer with alarm. Works offline as a Progressive Web App.`,
     category: 'Developer Tool', icon: '⏱️', hub: 'converter',
     keywords: ['online stopwatch','countdown timer online','stopwatch with lap timer','online timer free','study timer online','pomodoro timer online india'],
-    longDescription: `Recision stopwatch with split/lap time recording. Countdown timer with audio alarm. Supports Pomodoro technique presets (25 min work, 5 min break). Works offline — pure JavaScript, no server required.`,
+    longDescription: `Precision stopwatch with split/lap time recording. Countdown timer with audio alarm. Supports Pomodoro technique presets (25 min work, 5 min break). Works offline — pure JavaScript, no server required.`,
     workflow: [{ slug: 'working-days', label: 'Working Days Calculator', reason: 'Track deadlines alongside your timer' }],
     faqs: [
       { q: 'Is this stopwatch accurate?', a: 'Uses browsers performance.now() API which provides millisecond precision. Accuracy is limited by browser tab throttling — for professional timing, use a hardware stopwatch.' },
@@ -1060,7 +1060,7 @@ const NEW_TOOLS_40: Tool[] = [
     description: `Full scientific calculator with trigonometry, logarithms, powers, roots, factorial. Calculation history. Works on mobile.`,
     category: 'Calculator', icon: '🧮', hub: 'converter',
     keywords: ['scientific calculator online','advanced calculator online free','sin cos tan calculator','log calculator online','scientific calculator mobile','free online scientific calculator india'],
-    longDescription: `Ull-featured scientific calculator: basic arithmetic, trigonometric functions (sin, cos, tan, in degrees or radians), logarithms (log, ln), powers (x^y, √x, ∛x), factorial (n!), and memory functions (M+, M-, MR, MC). Calculation history panel.`,
+    longDescription: `Full-featured scientific calculator: basic arithmetic, trigonometric functions (sin, cos, tan, in degrees or radians), logarithms (log, ln), powers (x^y, √x, ∛x), factorial (n!), and memory functions (M+, M-, MR, MC). Calculation history panel.`,
     workflow: [{ slug: 'percentage-calculator', label: 'Percentage Calculator', reason: 'Quick percentage computations' }],
     faqs: [
       { q: 'How to calculate sin 30° online?', a: 'Set mode to Degrees, press 3, 0, then sin. Result: 0.5. In radians: sin(π/6) = 0.5.' },
@@ -1075,7 +1075,7 @@ const NEW_TOOLS_40: Tool[] = [
     keywords: ['readability checker online','flesch kincaid score calculator','gunning fog index calculator','reading level checker','text readability score free','seo readability checker'],
     longDescription: `Analyse text readability with 5 industry-standard metrics: Flesch Reading Ease, Flesch-Kincaid Grade Level, Gunning Fog Index, Coleman-Liau Index, and SMOG Index. Get grade-level recommendations and specific improvement tips.`,
     workflow: [{ slug: 'word-counter', label: 'Word Counter', reason: 'Check word and sentence counts used in readability formulas' }],
-    expertNote: `Or SEO content in India, Flesch Reading Ease score of 60-70 is optimal — "Plain English" that 13-15 year olds can read. Google\'s quality guidelines emphasize content written for readers, not algorithms.`,
+    expertNote: `For SEO content in India, Flesch Reading Ease score of 60-70 is optimal — "Plain English" that 13-15 year olds can read. Google\'s quality guidelines emphasize content written for readers, not algorithms.`,
     faqs: [
       { q: 'What is a good Flesch Reading Ease score?', a: '90-100 = Very Easy (5th grade). 70-80 = Fairly Easy (7th grade). 60-70 = Standard (8th-9th grade — ideal for web content). Below 30 = Academic/Legal.' },
       { q: 'Does readability affect Google rankings?', a: 'Indirectly yes. Google measures dwell time and bounce rate — hard-to-read content loses readers faster. Better readability = longer session = positive SEO signal.' },
@@ -1089,7 +1089,7 @@ const NEW_TOOLS_40: Tool[] = [
     keywords: ['gst invoice generator india free','invoice generator pdf download','free invoice maker india','gst bill generator online','proforma invoice generator india','tax invoice format india'],
     longDescription: `Create professional GST-compliant tax invoices with automatic GST calculation (5%, 12%, 18%, 28%). Add company logo, GSTIN, bank details, and multiple line items with HSN/SAC codes. Download as print-ready PDF. No account required.`,
     workflow: [{ slug: 'gst-calculator', label: 'GST Calculator', reason: 'Verify GST amounts on your invoice' }, { slug: 'number-to-words', label: 'Amount in Words', reason: 'Add total in words to invoice as required' }],
-    expertNote: ` valid GST invoice must include: GSTIN of supplier, GSTIN of recipient (B2B), HSN/SAC code (mandatory above ₹5 cr turnover), invoice number (unique serial), date, taxable value, GST rate and amount, total value.`,
+    expertNote: `A valid GST invoice must include: GSTIN of supplier, GSTIN of recipient (B2B), HSN/SAC code (mandatory above ₹5 cr turnover), invoice number (unique serial), date, taxable value, GST rate and amount, total value.`,
     faqs: [
       { q: 'Is this invoice legally valid?', a: 'The format follows GST invoice rules under CGST Act. For legal and ITC purposes, ensure your GSTIN is active and all mandatory fields are filled correctly.' },
       { q: 'Difference between tax invoice and proforma invoice?', a: 'Tax invoice = legally valid GST document for ITC claims. Proforma invoice = advance estimate before goods/services are delivered — not valid for ITC.' },

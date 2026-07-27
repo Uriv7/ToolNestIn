@@ -32,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/about/`,     lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
     { url: `${base}/privacy/`,   lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
     { url: `${base}/contact/`,   lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
+    { url: `${base}/terms/`,     lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
   ];
 
   const toolPages: MetadataRoute.Sitemap = TOOLS.map(tool => ({

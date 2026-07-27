@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { href: '/#developer', label: 'Developer' },
   { href: '/#health',    label: 'Health'    },
   { href: '/#text',      label: 'Text'      },
-  { href: '/blog',       label: 'Guides'    },
+  { href: '/blog/',      label: 'Guides'    },
 ];
 
 export default function Header() {
@@ -99,7 +99,7 @@ export default function Header() {
                 {results.map(tool => (
                   <Link
                     key={tool.slug}
-                    href={`/tools/${tool.slug}`}
+                    href={`/tools/${tool.slug}/`}
                     role="option"
                     className="flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition border-b last:border-0"
                     style={{ borderColor: 'rgba(255,255,255,0.05)' }}

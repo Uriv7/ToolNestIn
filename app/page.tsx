@@ -56,7 +56,7 @@ export default function HomePage() {
             const t = TOOLS.find(x => x.slug === slug);
             if (!t) return null;
             return (
-              <Link key={slug} href={`/tools/${slug}`}
+              <Link key={slug} href={`/tools/${slug}/`}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all hover:text-blue-400"
                 style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: '#94a3b8' }}
               >
@@ -151,7 +151,7 @@ export default function HomePage() {
                 {tools.map(tool => (
                   <Link
                     key={tool.slug}
-                    href={`/tools/${tool.slug}`}
+                    href={`/tools/${tool.slug}/`}
                     className="tool-card rounded-xl p-4 block group"
                     aria-label={`${tool.name.split('—')[0].trim()} — ${tool.description.slice(0, 60)}`}
                   >
@@ -214,7 +214,7 @@ export default function HomePage() {
               <h2 className="text-2xl font-bold text-slate-100 mb-1">Free guides & resources</h2>
               <p className="text-sm text-slate-500">Expert explanations for Indian tax, finance, and productivity</p>
             </div>
-            <Link href="/blog" className="text-sm font-medium text-blue-400 hover:text-blue-300 transition hidden sm:block">
+            <Link href="/blog/" className="text-sm font-medium text-blue-400 hover:text-blue-300 transition hidden sm:block">
               View all guides →
             </Link>
           </div>
