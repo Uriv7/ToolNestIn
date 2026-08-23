@@ -20,7 +20,7 @@ export default function TipCalculator() {
     <div className="space-y-5">
       <div>
         <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Bill Amount ($)</label>
-        <input type="number" className="tool-input text-lg" value={bill} onChange={e => setBill(e.target.value)} placeholder="0.00" />
+        <input type="number" className="tool-input text-lg" value={bill} onChange={e => setBill(e.target.value)} placeholder="0.00"  aria-label="Bill Amount ($)"/>
       </div>
       <div>
         <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Tip Percentage</label>

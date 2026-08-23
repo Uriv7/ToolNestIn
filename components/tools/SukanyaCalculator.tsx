@@ -20,8 +20,8 @@ export default function SukanyaCalculator() {
   return (
     <div className="space-y-5">
       <div className="grid grid-cols-2 gap-3">
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Annual Deposit (₹)</label><input type="number" className="tool-input" value={annual} onChange={e => setAnnual(e.target.value)} min="250" max="150000" /></div>
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Girl's Current Age (years)</label><input type="number" className="tool-input" value={girlAge} onChange={e => setGirlAge(e.target.value)} min="0" max="9" /></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Annual Deposit (₹)</label><input type="number" className="tool-input" value={annual} onChange={e => setAnnual(e.target.value)} min="250" max="150000"  aria-label="Annual Deposit (₹)"/></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Girl's Current Age (years)</label><input type="number" className="tool-input" value={girlAge} onChange={e => setGirlAge(e.target.value)} min="0" max="9"  aria-label="Girl's Current Age (years)"/></div>
       </div>
       <div className="bg-brand-500/10 border border-brand-400/20 rounded-xl p-3 text-sm text-slate-300 flex gap-2">
         <span>📌</span><span>Interest Rate: <strong className="text-brand-300">8.2% p.a.</strong> (Q1 2026) · EEE Tax Status · Deposits for {result.yearsLeft} years · Matures at age {result.maturityAge}</span>

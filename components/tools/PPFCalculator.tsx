@@ -55,7 +55,7 @@ export default function PPFCalculator() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Yearly Investment (₹)</label>
-          <input type="number" className="tool-input" value={yearly} onChange={e => setYearly(e.target.value)} max="150000" />
+          <input type="number" className="tool-input" value={yearly} onChange={e => setYearly(e.target.value)} max="150000"  aria-label="Yearly Investment (₹)"/>
           <p className="text-xs text-slate-600 mt-1">Max ₹1,50,000/year</p>
         </div>
         <div>

@@ -97,7 +97,7 @@ export default function ElectricityBillCalculator() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Units Consumed (kWh)</label>
-          <input type="number" className="tool-input text-lg font-bold" value={units} onChange={e => setUnits(e.target.value)} placeholder="e.g. 250" />
+          <input type="number" className="tool-input text-lg font-bold" value={units} onChange={e => setUnits(e.target.value)} placeholder="e.g. 250"  aria-label="Units Consumed (kWh)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">State / Utility</label>

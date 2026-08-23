@@ -13,7 +13,7 @@ export default function WaterIntakeCalculator() {
   const levels = [{label:'Sedentary',id:'sedentary'},{label:'Moderate',id:'moderate'},{label:'Active (gym)',id:'active'},{label:'Very Active',id:'very-active'}];
   return (
     <div className="space-y-5">
-      <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Body Weight (kg)</label><input type="number" className="tool-input" value={weight} onChange={e => setWeight(e.target.value)} placeholder="70" /></div>
+      <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Body Weight (kg)</label><input type="number" className="tool-input" value={weight} onChange={e => setWeight(e.target.value)} placeholder="70"  aria-label="Body Weight (kg)"/></div>
       <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Activity Level</label>
         <div className="grid grid-cols-2 gap-2">{levels.map(l=>(<button key={l.id} onClick={()=>setActivity(l.id)} className={`py-2 rounded-xl text-sm font-semibold border transition ${activity===l.id?'bg-brand-500/20 border-brand-400/50 text-brand-300':'bg-white/3 border-white/10 text-slate-500'}`}>{l.label}</button>))}</div>
       </div>

@@ -76,6 +76,19 @@ export default function HTMLFormatter() {
             {output && <button onClick={copy} className="btn-secondary text-xs py-1.5 px-3">{copied ? '✓ Copied!' : '📋 Copy'}</button>}
           </div>
           <textarea className="tool-input resize-none font-mono text-xs bg-dark-900/80" rows={16} value={output} readOnly />
+          {output && input && (() => {
+            const inBytes = new Blob([input]).size;
+            const outBytes = new Blob([output]).size;
+            const diff = inBytes - outBytes;
+            const pct = inBytes > 0 ? Math.abs(Math.round((diff / inBytes) * 100)) : 0;
+            return (
+              <p className="text-xs text-slate-500 mt-2">
+                {inBytes.toLocaleString()} → {outBytes.toLocaleString()} bytes
+                {diff > 0 && <span className="text-emerald-400 font-semibold"> · {pct}% smaller</span>}
+                {diff < 0 && <span className="text-slate-500"> · {pct}% larger (indentation added)</span>}
+              </p>
+            );
+          })()}
         </div>
       </div>
 

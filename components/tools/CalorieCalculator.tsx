@@ -43,15 +43,15 @@ export default function CalorieCalculator() {
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Weight (kg)</label>
-          <input type="number" className="tool-input" value={weight} onChange={e => setWeight(e.target.value)} placeholder="70" />
+          <input type="number" className="tool-input" value={weight} onChange={e => setWeight(e.target.value)} placeholder="70"  aria-label="Weight (kg)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Height (cm)</label>
-          <input type="number" className="tool-input" value={height} onChange={e => setHeight(e.target.value)} placeholder="170" />
+          <input type="number" className="tool-input" value={height} onChange={e => setHeight(e.target.value)} placeholder="170"  aria-label="Height (cm)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Age (years)</label>
-          <input type="number" className="tool-input" value={age} onChange={e => setAge(e.target.value)} placeholder="30" />
+          <input type="number" className="tool-input" value={age} onChange={e => setAge(e.target.value)} placeholder="30"  aria-label="Age (years)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Gender</label>

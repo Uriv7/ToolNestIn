@@ -35,11 +35,11 @@ export default function NPSCalculator() {
       <div className="grid grid-cols-2 gap-3">
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Monthly Contribution (₹)</label>
-          <input type="number" className="tool-input" value={monthly} onChange={e => setMonthly(e.target.value)} placeholder="5000" />
+          <input type="number" className="tool-input" value={monthly} onChange={e => setMonthly(e.target.value)} placeholder="5000"  aria-label="Monthly Contribution (₹)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Current Age</label>
-          <input type="number" className="tool-input" value={age} onChange={e => setAge(e.target.value)} placeholder="30" min="18" max="59" />
+          <input type="number" className="tool-input" value={age} onChange={e => setAge(e.target.value)} placeholder="30" min="18" max="59"  aria-label="Current Age"/>
         </div>
       </div>
       <div>

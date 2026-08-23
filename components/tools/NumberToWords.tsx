@@ -16,21 +16,40 @@ function toWords(n: number): string {
   return toWords(Math.floor(n / 10000000)) + ' Crore' + (n % 10000000 ? ' ' + toWords(n % 10000000) : '');
 }
 
+// International system — groups of 3 digits (Thousand/Million/Billion), used by USD and
+// most of the world, as distinct from the Indian Lakh/Crore grouping above.
+function toWordsIntl(n: number): string {
+  if (n === 0) return 'Zero';
+  if (n < 0) return 'Minus ' + toWordsIntl(-n);
+  if (n < 20) return ones[n];
+  if (n < 100) return tens[Math.floor(n / 10)] + (n % 10 ? ' ' + ones[n % 10] : '');
+  if (n < 1000) return ones[Math.floor(n / 100)] + ' Hundred' + (n % 100 ? ' ' + toWordsIntl(n % 100) : '');
+  if (n < 1000000) return toWordsIntl(Math.floor(n / 1000)) + ' Thousand' + (n % 1000 ? ' ' + toWordsIntl(n % 1000) : '');
+  if (n < 1000000000) return toWordsIntl(Math.floor(n / 1000000)) + ' Million' + (n % 1000000 ? ' ' + toWordsIntl(n % 1000000) : '');
+  return toWordsIntl(Math.floor(n / 1000000000)) + ' Billion' + (n % 1000000000 ? ' ' + toWordsIntl(n % 1000000000) : '');
+}
+
 export default function NumberToWords() {
   const [input, setInput] = useState('');
   const [currency, setCurrency] = useState<'INR' | 'USD' | 'plain'>('INR');
+  // For 'plain' mode, let the user explicitly pick which grouping system to use —
+  // INR always uses Indian (Lakh/Crore), USD always uses International (Million/Billion),
+  // since that's the real-world convention for each currency.
+  const [system, setSystem] = useState<'indian' | 'international'>('indian');
   const [copied, setCopied] = useState(false);
 
   const num = parseFloat(input);
   const isValid = input !== '' && !isNaN(num) && num >= 0 && num < 100000000000;
+  const activeSystem = currency === 'USD' ? 'international' : currency === 'INR' ? 'indian' : system;
+  const convert = activeSystem === 'international' ? toWordsIntl : toWords;
 
   const getResult = () => {
     if (!isValid) return '';
     const n = Math.floor(num);
     const dec = Math.round((num - n) * 100);
-    let text = toWords(n);
-    if (currency === 'INR') text = 'Rupees ' + text + (dec > 0 ? ' and ' + toWords(dec) + ' Paise' : '') + ' Only';
-    else if (currency === 'USD') text = text + (dec > 0 ? ' Dollars and ' + toWords(dec) + ' Cents' : ' Dollars') + ' Only';
+    let text = convert(n);
+    if (currency === 'INR') text = 'Rupees ' + text + (dec > 0 ? ' and ' + convert(dec) + ' Paise' : '') + ' Only';
+    else if (currency === 'USD') text = text + (dec > 0 ? ' Dollars and ' + convert(dec) + ' Cents' : ' Dollars') + ' Only';
     return text;
   };
 
@@ -41,7 +60,7 @@ export default function NumberToWords() {
     <div className="space-y-5">
       <div>
         <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Enter Number</label>
-        <input type="number" className="tool-input text-xl font-bold" value={input} onChange={e => setInput(e.target.value)} placeholder="e.g. 125000" min="0" />
+        <input type="number" className="tool-input text-xl font-bold" value={input} onChange={e => setInput(e.target.value)} placeholder="e.g. 125000" min="0"  aria-label="Enter Number"/>
       </div>
 
       <div className="flex gap-2">
@@ -52,6 +71,17 @@ export default function NumberToWords() {
           </button>
         ))}
       </div>
+
+      {currency === 'plain' && (
+        <div className="flex gap-2">
+          {(['indian', 'international'] as const).map(s => (
+            <button key={s} onClick={() => setSystem(s)}
+              className={`flex-1 py-2 rounded-xl text-xs font-semibold border transition ${system === s ? 'bg-brand-500/15 border-brand-400/40 text-brand-300' : 'bg-white/3 border-white/10 text-slate-500 hover:text-slate-300'}`}>
+              {s === 'indian' ? 'Indian (Lakh/Crore)' : 'International (Million/Billion)'}
+            </button>
+          ))}
+        </div>
+      )}
 
       {result && (
         <div className="bg-brand-500/10 border border-brand-400/30 rounded-2xl p-5">

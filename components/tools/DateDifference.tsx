@@ -46,11 +46,11 @@ export default function DateDifference() {
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Start Date</label>
-          <input type="date" className="tool-input" value={date1} onChange={e => setDate1(e.target.value)} />
+          <input type="date" className="tool-input" value={date1} onChange={e => setDate1(e.target.value)}  aria-label="Start Date"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">End Date</label>
-          <input type="date" className="tool-input" value={date2} onChange={e => setDate2(e.target.value)} />
+          <input type="date" className="tool-input" value={date2} onChange={e => setDate2(e.target.value)}  aria-label="End Date"/>
         </div>
       </div>
 

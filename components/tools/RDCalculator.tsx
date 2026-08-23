@@ -34,15 +34,15 @@ export default function RDCalculator() {
       <div className="grid grid-cols-3 gap-3">
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Monthly Deposit (₹)</label>
-          <input type="number" className="tool-input" value={monthly} onChange={e => setMonthly(e.target.value)} />
+          <input type="number" className="tool-input" value={monthly} onChange={e => setMonthly(e.target.value)}  aria-label="Monthly Deposit (₹)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Rate (% p.a.)</label>
-          <input type="number" className="tool-input" value={rate} onChange={e => setRate(e.target.value)} step="0.1" />
+          <input type="number" className="tool-input" value={rate} onChange={e => setRate(e.target.value)} step="0.1"  aria-label="Rate (% p.a.)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Tenure (months)</label>
-          <input type="number" className="tool-input" value={months} onChange={e => setMonths(e.target.value)} min="6" />
+          <input type="number" className="tool-input" value={months} onChange={e => setMonths(e.target.value)} min="6"  aria-label="Tenure (months)"/>
         </div>
       </div>
       <div className="grid grid-cols-3 gap-3">

@@ -39,7 +39,7 @@ export const TOOLS: Tool[] = [
     description: `Calculate monthly EMI for any loan. Full amortization schedule showing principal vs interest month by month.`,
     category: 'Calculator', icon: '🏦', hub: 'finance',
     keywords: ['emi calculator india 2026','home loan emi calculator sbi hdfc','car loan emi calculator','personal loan emi calculator','loan amortization schedule india','emi formula calculator','education loan emi'],
-    longDescription: `Three calculation modes: (1) What is X% of a number — for GST amounts, exam marks, discount values; (2) What percentage is X of Y — for result percentages and market share; (3) Percentage change between two values — for salary hike, price changes, or portfolio returns. Instant results with the formula displayed so you can learn how to calculate percentage manually.`,
+    longDescription: `Calculate your exact monthly EMI for a home, car, personal, or education loan using the standard reducing-balance formula banks use. Enter the loan amount, interest rate, and tenure to see your monthly payment instantly, along with a full month-by-month amortization schedule showing exactly how much of each EMI goes toward interest versus principal. Compare fixed vs floating rates, model the effect of a rate change, or check how much a lump-sum prepayment would save in total interest before committing to it.`,
     workflow: [{ slug: 'percentage-calculator', label: 'Interest Rate Impact', reason: 'See what a 0.5% rate change does to total interest' }, { slug: 'ctc-calculator', label: 'Take-Home Calculator', reason: 'Ensure EMI is below 40% of take-home salary' }],
     expertNote: `RBI April 2026: Repo rate at 5.75%. SBI EBLR = 8.40%. For floating rate loans linked to EBLR, any repo rate cut passes through within 3 months. If on MCLR-linked loan, switch to EBLR for better rate transmission.`,
     faqs: [
@@ -189,7 +189,7 @@ export const TOOLS: Tool[] = [
     name: 'Tip Calculator & Bill Splitter',
     description: `Calculate tip and split restaurant bill among friends. Custom tip %, per-person breakdown.`,
     category: 'Calculator', icon: '🍽️', hub: 'finance',
-    keywords: ['tip calculator bill splitter','restaurant bill split calculator','how much tip india','bill splitting calculator online'],
+    keywords: ['tip calculator india','tip calculator bill splitter','restaurant bill split calculator','how much tip india','bill splitting calculator online'],
     longDescription: `Calculate the tip amount for any restaurant bill, split the total among multiple people, and see exactly how much each person owes. Supports custom tip percentages and unequal splitting. Useful for restaurants, group outings, and cab sharing in India where UPI splitting is common. Shows per-person amount rounded to the nearest rupee.`,
     workflow: [{ slug: 'percentage-calculator', label: 'Verify Tip %', reason: 'Double-check the percentage manually' }],
     faqs: [{ q: 'Is tipping mandatory in India?', a: 'Not mandatory. 10-15% is customary. Many restaurants add service charge (5-10%) which is legally optional — you can request its removal.' }],

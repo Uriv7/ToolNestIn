@@ -14,8 +14,8 @@ export default function AspectRatioCalculator() {
     <div className="space-y-5">
       <div className="flex gap-2 flex-wrap">{PRESETS.map(p=>(<button key={p.l} onClick={()=>apply(p.r)} className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/3 border border-white/10 text-slate-400 hover:text-slate-200 hover:border-white/20 transition">{p.l}</button>))}</div>
       <div className="grid grid-cols-2 gap-3">
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Width (px)</label><input type="number" className="tool-input text-lg" value={w} onChange={e=>setW(e.target.value)} /></div>
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Height (px)</label><input type="number" className="tool-input text-lg" value={h} onChange={e=>setH(e.target.value)} /></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Width (px)</label><input type="number" className="tool-input text-lg" value={w} onChange={e => setW(e.target.value)} aria-label="Width (px)" /></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Height (px)</label><input type="number" className="tool-input text-lg" value={h} onChange={e => setH(e.target.value)} aria-label="Height (px)" /></div>
       </div>
       {ratio && (<div className="grid grid-cols-3 gap-3">
         <div className="bg-brand-500/15 border border-brand-400/40 rounded-2xl p-4 text-center"><div className="gradient-text font-extrabold text-2xl">{ratio}</div><div className="text-xs text-slate-400 mt-1">Aspect Ratio</div></div>

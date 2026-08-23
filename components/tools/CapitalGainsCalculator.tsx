@@ -31,9 +31,9 @@ export default function CapitalGainsCalculator() {
       </div>
       {asset.note && <p className="text-amber-400 text-sm text-center">{asset.note}</p>}
       <div className="grid grid-cols-2 gap-3">
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Buy Price (₹)</label><input type="number" className="tool-input" value={buyPrice} onChange={e => setBuyPrice(e.target.value)} placeholder="100000" /></div>
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Sell Price (₹)</label><input type="number" className="tool-input" value={sellPrice} onChange={e => setSellPrice(e.target.value)} placeholder="150000" /></div>
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Holding Period (months)</label><input type="number" className="tool-input" value={heldMonths} onChange={e => setHeldMonths(e.target.value)} placeholder="13" /></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Buy Price (₹)</label><input type="number" className="tool-input" value={buyPrice} onChange={e => setBuyPrice(e.target.value)} placeholder="100000"  aria-label="Buy Price (₹)"/></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Sell Price (₹)</label><input type="number" className="tool-input" value={sellPrice} onChange={e => setSellPrice(e.target.value)} placeholder="150000"  aria-label="Sell Price (₹)"/></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Holding Period (months)</label><input type="number" className="tool-input" value={heldMonths} onChange={e => setHeldMonths(e.target.value)} placeholder="13"  aria-label="Holding Period (months)"/></div>
         <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Your Tax Slab</label>
           <select className="tool-input" value={slab} onChange={e => setSlab(parseInt(e.target.value))}>
             {[0,5,10,15,20,25,30].map(s => <option key={s} value={s}>{s}%</option>)}

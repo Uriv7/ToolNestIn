@@ -21,10 +21,10 @@ export default function EMIMoratoriumCalculator() {
   return (
     <div className="space-y-5">
       <div className="grid grid-cols-2 gap-3">
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Loan Amount (₹)</label><input type="number" className="tool-input" value={principal} onChange={e=>setPrincipal(e.target.value)} placeholder="5000000" /></div>
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Interest Rate (% p.a.)</label><input type="number" className="tool-input" value={rate} onChange={e=>setRate(e.target.value)} step="0.05" /></div>
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Loan Tenure (years)</label><input type="number" className="tool-input" value={tenure} onChange={e=>setTenure(e.target.value)} /></div>
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Moratorium Period (months)</label><input type="number" className="tool-input" value={moratorium} onChange={e=>setMoratorium(e.target.value)} min="1" max="12" /></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Loan Amount (₹)</label><input type="number" className="tool-input" value={principal} onChange={e => setPrincipal(e.target.value)} aria-label="Loan Amount (₹)" placeholder="5000000" /></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Interest Rate (% p.a.)</label><input type="number" className="tool-input" value={rate} onChange={e => setRate(e.target.value)} aria-label="Interest Rate (% p.a.)" step="0.05" /></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Loan Tenure (years)</label><input type="number" className="tool-input" value={tenure} onChange={e => setTenure(e.target.value)} aria-label="Loan Tenure (years)" /></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Moratorium Period (months)</label><input type="number" className="tool-input" value={moratorium} onChange={e => setMoratorium(e.target.value)} aria-label="Moratorium Period (months)" min="1" max="12" /></div>
       </div>
       {result && (<div className="space-y-3">
         <div className="grid grid-cols-2 gap-3">

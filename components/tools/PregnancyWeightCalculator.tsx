@@ -20,8 +20,8 @@ export default function PregnancyWeightCalculator() {
   return (
     <div className="space-y-5">
       <div className="grid grid-cols-2 gap-3">
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Pre-Pregnancy BMI</label><input type="number" className="tool-input" value={preBMI} onChange={e => setPreBMI(e.target.value)} placeholder="22" step="0.1" /></div>
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Current Week of Pregnancy</label><input type="number" className="tool-input" value={week} onChange={e => setWeek(e.target.value)} min="1" max="40" placeholder="20" /></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Pre-Pregnancy BMI</label><input type="number" className="tool-input" value={preBMI} onChange={e => setPreBMI(e.target.value)} placeholder="22" step="0.1"  aria-label="Pre-Pregnancy BMI"/></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Current Week of Pregnancy</label><input type="number" className="tool-input" value={week} onChange={e => setWeek(e.target.value)} min="1" max="40" placeholder="20"  aria-label="Current Week of Pregnancy"/></div>
       </div>
       {range && (
         <div className="space-y-3">

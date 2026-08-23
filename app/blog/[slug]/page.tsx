@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const article = ARTICLES.find(a => a.slug === params.slug);
   if (!article) return {};
   return {
-    title: `${article.title} | ToolNestIn`,
+    title: article.title,
     description: article.excerpt,
     alternates: { canonical: `https://toolnestin.co.in/blog/${article.slug}/` },
     openGraph: { title: article.title, description: article.excerpt, type: 'article',
@@ -53,23 +53,39 @@ const CONTENT: Record<string, React.ReactNode> = {
       </ul>
       <h2>Use the free GST Calculator</h2>
       <p>Rather than calculating manually every time, use our <Link href="/tools/gst-calculator/" className="text-brand-400 hover:underline">free GST Calculator</Link> which handles all four slabs, intrastate/interstate split, and reverse calculations instantly.</p>
+      <h2>Input Tax Credit (ITC) — the concept businesses get wrong</h2>
+      <p>ITC lets a registered business deduct the GST it paid on purchases (inputs) from the GST it owes on sales (output). This prevents the same value from being taxed multiple times as goods move through a supply chain. For example, if you buy raw materials for ₹1,00,000 + 18% GST (₹18,000) and sell the finished product for ₹2,00,000 + 18% GST (₹36,000), you don't pay ₹36,000 to the government — you pay ₹36,000 − ₹18,000 = ₹18,000, because you already paid ₹18,000 in GST on your inputs.</p>
+      <p>ITC cannot be claimed on every purchase, though — common exclusions include motor vehicles (with some exceptions), food and beverages, and employee-related expenses like life or health insurance unless mandated by law. A mismatch between what a supplier reports and what you claim is one of the most common reasons ITC gets rejected during a GST audit.</p>
+      <h2>Composition scheme — an alternative for small businesses</h2>
+      <p>Businesses with annual turnover under ₹1.5 crore (₹75 lakh for some special category states) can opt for the GST Composition Scheme instead of regular GST. Under composition, you pay a flat, low rate on turnover (typically 1% for traders, 5% for restaurants) instead of standard slab rates, but you cannot claim ITC and cannot charge GST separately on invoices. This suits small traders and restaurants with simple operations, but it's a poor fit for B2B businesses whose customers need ITC to be passed through.</p>
+      <h2>GST on inter-state e-commerce — a common confusion</h2>
+      <p>Many small online sellers assume GST rules for e-commerce are simpler because a platform like Amazon or Flipkart "handles it." In reality, sellers on e-commerce platforms must be GST-registered regardless of turnover (the usual ₹40 lakh/₹20 lakh registration threshold doesn't apply to e-commerce sellers), and platforms deduct Tax Collected at Source (TCS) at 1% on the net value of taxable supplies, which the seller can then claim as credit against their GST liability.</p>
+      <h2>Frequently asked questions</h2>
+      <p><strong>Do I need to register for GST if my turnover is below ₹40 lakh?</strong> Generally no for goods (₹20 lakh for services, lower thresholds in special category states), unless you sell inter-state, sell via e-commerce, or fall under mandatory registration categories regardless of turnover.</p>
+      <p><strong>Can GST rates change without notice?</strong> Rate changes are announced by the GST Council (which meets periodically) and typically take effect from a specified future date, not retroactively — but slabs for specific goods do get revised every few Council meetings, so it's worth checking current rates for high-value purchases.</p>
     </div>
   ),
   'old-vs-new-tax-regime-2026': (
     <div className="prose-content">
-      <p>The Union Budget 2023 made the New Tax Regime the default for all salaried taxpayers in FY 2023-24, continuing into FY 2025-26. But "default" does not mean "better." Choosing the wrong regime can cost you thousands of rupees annually. Here is how to decide.</p>
+      <p>The Union Budget 2023 made the New Tax Regime the default for all salaried taxpayers, and Budget 2025 substantially widened the gap between the two regimes by revising the New Regime's slabs and raising its rebate threshold. "Default" still does not mean "better" for everyone — but the calculation has shifted significantly in the New Regime's favour for most people since Budget 2025. Here is how to decide with current figures.</p>
       <h2>The two regimes at a glance</h2>
-      <p><strong>Old Tax Regime:</strong> Higher slab rates, but you can claim deductions (80C up to ₹1.5L, HRA, home loan interest under Section 24, 80D medical insurance, LTA, etc.). Works best for those with significant investments and deductions.</p>
-      <p><strong>New Tax Regime (FY 2025-26 slabs):</strong><br/>Up to ₹3 lakh — Nil<br/>₹3L–7L — 5%<br/>₹7L–10L — 10%<br/>₹10L–12L — 15%<br/>₹12L–15L — 20%<br/>Above ₹15L — 30%</p>
-      <p>Standard deduction of ₹75,000 is available under the New Regime. No other deductions.</p>
-      <h2>The ₹7.75 lakh rule of thumb</h2>
-      <p>If your total deductions (80C + HRA + home loan + 80D + others) exceed roughly ₹3.75 lakh above the ₹75,000 standard deduction, the Old Regime is likely better. Below that threshold, the New Regime usually wins.</p>
+      <p><strong>Old Tax Regime:</strong> Higher slab rates, but you can claim deductions (80C up to ₹1.5L, HRA, home loan interest under Section 24, 80D medical insurance, LTA, etc.). Standard deduction is ₹50,000. Works best for those with significant investments and deductions.</p>
+      <p><strong>New Tax Regime (FY 2025-26 slabs, per Budget 2025):</strong><br/>Up to ₹4 lakh — Nil<br/>₹4L–8L — 5%<br/>₹8L–12L — 10%<br/>₹12L–16L — 15%<br/>₹16L–20L — 20%<br/>₹20L–24L — 25%<br/>Above ₹24L — 30%</p>
+      <p>Standard deduction of ₹75,000 is available under the New Regime. No other deductions. Crucially, Budget 2025 also raised the Section 87A rebate so that <strong>taxable income up to ₹12 lakh under the New Regime pays zero tax</strong> — for a salaried employee, that means <strong>gross income up to ₹12.75 lakh (₹12L + ₹75,000 standard deduction) is effectively tax-free under the New Regime</strong>, regardless of any other deductions.</p>
       <h2>Worked example — ₹12 lakh CTC</h2>
-      <p><strong>Old Regime assumptions:</strong> 80C = ₹1.5L, HRA exemption = ₹1L, 80D = ₹25,000, standard deduction = ₹50,000. Total deductions = ₹3.25L. Taxable income = ₹8.75L. Tax = approx ₹87,500.</p>
-      <p><strong>New Regime:</strong> Standard deduction = ₹75,000. Taxable income = ₹11.25L. Tax = approx ₹1,12,500.</p>
-      <p>In this example, the Old Regime saves ₹25,000. Use our <Link href="/tools/income-tax-calculator/" className="text-brand-400 hover:underline">Income Tax Calculator</Link> to run the comparison with your exact figures.</p>
-      <h2>When the New Regime wins</h2>
-      <p>If you are a young earner with minimal investments, no HRA (WFH or own house), and no home loan — the New Regime's lower slab rates and simplicity make it better. Same for income above ₹15L where the 30% slab applies in both regimes and having over ₹4L in deductions is rare.</p>
+      <p><strong>Old Regime:</strong> 80C = ₹1.5L, HRA exemption = ₹1L, 80D = ₹25,000, standard deduction = ₹50,000. Total deductions = ₹3.25L. Taxable income = ₹8.75L. Tax ≈ ₹91,000 (including cess).</p>
+      <p><strong>New Regime:</strong> Standard deduction = ₹75,000. Taxable income = ₹11.25L — under the ₹12L rebate threshold. <strong>Tax = ₹0.</strong></p>
+      <p>At this income level, the New Regime wins decisively — by the full ₹91,000 — because ₹11.25L taxable income falls entirely within the New Regime's zero-tax rebate zone. This is a complete reversal from pre-Budget-2025 rules, where the New Regime's rebate only covered taxable income up to ₹7 lakh. Use our <Link href="/tools/income-tax-calculator/" className="text-brand-400 hover:underline">Income Tax Calculator</Link> to run the comparison with your exact figures.</p>
+      <h2>When the Old Regime still wins</h2>
+      <p>The Old Regime remains better mainly at higher incomes with substantial deductions — particularly a home loan (Section 24b interest, up to ₹2L) stacked with HRA and full 80C, since the New Regime allows none of these. Below roughly ₹12.75L gross, the New Regime's zero-tax zone is very hard for the Old Regime to beat even with maximum deductions, since the Old Regime still owes tax on income above its much lower ₹2.5L exemption.</p>
+      <h2>Worked example — ₹18 lakh CTC with a home loan</h2>
+      <p><strong>Old Regime:</strong> 80C = ₹1.5L, home loan interest (Sec 24b) = ₹2L, HRA exemption = ₹1.5L, 80D = ₹25,000, standard deduction = ₹50,000. Total deductions = ₹5.75L. Taxable income = ₹12.25L. Tax ≈ ₹1,87,200 (including cess).</p>
+      <p><strong>New Regime:</strong> Standard deduction = ₹75,000. Taxable income = ₹17.25L — above the ₹12L rebate threshold, so full slab tax applies. Tax ≈ ₹1,50,800 (including cess).</p>
+      <p>Even with a home loan, full 80C, and HRA stacked together, the New Regime still comes out ahead here by roughly ₹36,400 — a direct consequence of Budget 2025's slab widening. Under the pre-2025 rules this same scenario favoured the Old Regime; that is no longer reliably true. The gap does close, and can flip to the Old Regime, at higher incomes with even larger deductions (a bigger home loan, for instance) — which is exactly why running your own numbers through the calculator matters more than following a rule of thumb.</p>
+      <h2>Can you switch regimes every year?</h2>
+      <p>Salaried individuals without business income can switch between the Old and New Regime every financial year when filing their return — you're not locked in. This means you can genuinely calculate both ways each year and pick whichever is lower, rather than committing long-term. Those with business or professional income face more restrictions: they can switch back to the Old Regime only once after opting for the New Regime.</p>
+      <h2>What most people get wrong</h2>
+      <p>The most common mistake right now is still comparing regimes using pre-Budget-2025 assumptions — a lot of advice and old spreadsheets circulating online still reference the old ₹7L rebate threshold and the old New Regime slabs, which understate how favourable the New Regime became after Budget 2025. If your last regime comparison is more than a year old, it's worth re-running it with current figures rather than trusting last year's conclusion.</p>
     </div>
   ),
   'emi-calculation-guide-india': (
@@ -88,6 +104,12 @@ const CONTENT: Record<string, React.ReactNode> = {
         <li><strong>Negotiate rate:</strong> Moving from 8.5% to 8.0% on ₹50L saves approximately ₹1.7L over 20 years.</li>
       </ul>
       <p>Use our <Link href="/tools/emi-calculator/" className="text-brand-400 hover:underline">free EMI Calculator</Link> to try different scenarios with your loan details.</p>
+      <h2>Fixed vs floating interest rate — how it changes your EMI</h2>
+      <p>Most Indian home loans are floating-rate, tied to a bank's external benchmark (usually the RBI repo rate) plus a spread. When the RBI changes the repo rate, your bank typically adjusts your loan rate within a quarter, which changes either your EMI or your tenure, depending on what your bank's policy allows you to choose. Fixed-rate loans keep the same rate for a set period (or the full tenure), giving predictability but usually starting 1-2% higher than floating rates, since the bank is pricing in the risk of rates rising later.</p>
+      <h2>The amortisation schedule — why your principal barely moves at first</h2>
+      <p>An amortisation schedule breaks down every EMI into its interest and principal components across the loan tenure. On a 20-year loan, it typically takes 8-10 years before the principal component of your EMI exceeds the interest component — meaning for the first third to nearly half of a long-tenure loan, you're mostly paying interest, not reducing what you owe. This is precisely why prepaying early in a loan's life saves dramatically more interest than prepaying the same amount later: early prepayments strike directly at the high-interest, low-principal-reduction phase of the schedule.</p>
+      <h2>Balance transfer — when it's actually worth it</h2>
+      <p>Transferring your home loan to a new lender for a lower rate involves processing fees (typically 0.5-1% of outstanding principal) and paperwork. As a rule of thumb, a balance transfer is usually worth it if the rate difference is at least 0.5-0.75 percentage points and you have more than 5 years of tenure remaining — below that, the processing costs and effort often outweigh the interest savings. Always calculate the actual rupee savings on your specific outstanding principal and remaining tenure rather than going by the percentage difference alone.</p>
     </div>
   ),
   'sip-vs-lumpsum-india': (
@@ -102,6 +124,12 @@ const CONTENT: Record<string, React.ReactNode> = {
       <h2>The honest answer for most Indian investors</h2>
       <p>If you receive a regular salary: SIP. It aligns with when you receive money, removes timing decisions, and builds financial discipline. If you receive a windfall (bonus, inheritance, property sale): split it — invest 40% as lump sum immediately, deploy the rest in a 6-month STP (Systematic Transfer Plan) from a liquid fund.</p>
       <p>Use our <Link href="/tools/sip-calculator/" className="text-brand-400 hover:underline">SIP Calculator</Link> to estimate your corpus, then compare different scenarios.</p>
+      <h2>What "returns" actually means for a SIP — CAGR vs XIRR</h2>
+      <p>A single lump-sum investment has one clean return figure (CAGR). A SIP has 240 separate monthly investments (for a 20-year SIP) each with a different holding period by the time you check your returns, so a simple CAGR calculation doesn't accurately represent SIP performance. The correct metric is XIRR (Extended Internal Rate of Return), which properly weights each instalment by its actual investment date. This is why your mutual fund app shows XIRR, not CAGR, for SIP holdings — and why comparing a "12% CAGR" assumption used in projections against your own SIP's XIRR isn't quite apples-to-apples.</p>
+      <h2>Step-up SIP — a more realistic long-term strategy</h2>
+      <p>A step-up (or "top-up") SIP increases your monthly investment by a fixed percentage each year, typically matching salary growth (commonly 10%). Starting a ₹10,000/month SIP with a 10% annual step-up, instead of a flat ₹10,000/month for 20 years, roughly doubles your final corpus at the same 12% CAGR assumption — because a growing income base naturally allows growing investments, and the compounding benefit of investing more in your later, larger-base years is substantial.</p>
+      <h2>Market timing — why it's harder than it looks</h2>
+      <p>The core argument for SIP over lump sum is that predicting short-term market direction is genuinely difficult even for professional fund managers, and mistiming a large lump-sum entry (investing right before a downturn) can set your portfolio back years. Data from multiple market cycles shows that missing just the 10 best trading days over a 15-20 year period can cut total returns roughly in half — which is a strong argument against trying to "wait for the dip" indefinitely rather than starting to invest, whether via SIP or a staggered lump-sum deployment.</p>
     </div>
   ),
   'hra-exemption-guide': (
@@ -123,6 +151,12 @@ const CONTENT: Record<string, React.ReactNode> = {
       <h2>HRA and home loan together</h2>
       <p>You can claim both HRA exemption and home loan interest deduction under Section 24(b) simultaneously — but only if your rented house and owned house are in different cities. If you live in your own house, you cannot claim HRA regardless of whether you pay a mortgage.</p>
       <p>Calculate your exact HRA exemption with our <Link href="/tools/hra-calculator/" className="text-brand-400 hover:underline">free HRA Calculator</Link>.</p>
+      <h2>Paying rent to a family member — is it allowed?</h2>
+      <p>Yes, you can claim HRA exemption while paying rent to a parent, provided the arrangement is genuine: you need an actual rent agreement, monthly rent payments through a traceable method (bank transfer, not cash), and rent receipts. Your parent must also declare this rent as income in their own tax return, since the IT department treats this as a genuine landlord-tenant transaction, not a bookkeeping formality. You cannot claim HRA for rent paid to a spouse, since the tax department views a spousal arrangement as inherently non-arm's-length.</p>
+      <h2>What happens if you don't submit rent receipts on time</h2>
+      <p>Employers typically require rent receipts and the landlord's PAN (if applicable) by January or February to factor HRA exemption into your Form 16 and monthly TDS. If you miss this deadline, your employer will deduct higher TDS through the rest of the year, but you can still claim the HRA exemption directly while filing your Income Tax Return (ITR) — the exemption isn't lost, you simply get the benefit as a refund instead of through reduced monthly TDS.</p>
+      <h2>Self-employed and freelancers — no HRA, but not without options</h2>
+      <p>HRA exemption under Section 10(13A) is only available to salaried employees who actually receive an HRA component from an employer. Self-employed individuals and freelancers can't claim HRA, but they can claim rent paid under Section 80GG instead, subject to different (generally lower) limits — the lower of ₹5,000/month, 25% of total income, or rent paid minus 10% of income — and only if neither they nor their spouse own a house in the city where they work.</p>
     </div>
   ),
   'nps-vs-ppf-india': (
@@ -140,6 +174,12 @@ const CONTENT: Record<string, React.ReactNode> = {
       <h2>Which should you choose?</h2>
       <p>For most salaried Indians, the optimal strategy is both: max PPF for ₹1.5L guaranteed-safe 80C deduction with full liquidity after 15 years, plus NPS for the extra 80CCD(1B) deduction and higher long-term equity returns for retirement.</p>
       <p>Use our <Link href="/tools/nps-calculator/" className="text-brand-400 hover:underline">NPS Calculator</Link> and <Link href="/tools/ppf-calculator/" className="text-brand-400 hover:underline">PPF Calculator</Link> to model both scenarios with your exact numbers.</p>
+      <h2>NPS asset allocation — Active vs Auto choice</h2>
+      <p>NPS lets you choose how your contributions are split across Equity (E), Corporate Bonds (C), and Government Securities (G). Under "Active Choice," you set the allocation yourself, with equity exposure capped at 75% and reducing after age 50. Under "Auto Choice" (Lifecycle Fund), the equity allocation starts higher when you're young and automatically glides down as you approach retirement — a "set and forget" option that suits most people who don't want to actively rebalance their retirement portfolio every few years.</p>
+      <h2>What happens to your NPS corpus at retirement</h2>
+      <p>At age 60, you can withdraw up to 60% of your NPS corpus as a tax-free lump sum. The remaining 40% (minimum) must be used to purchase an annuity from an IRDAI-registered insurer, which then pays you a regular pension — but this pension income is taxable as per your income slab in the years you receive it. This mandatory annuitisation is the single biggest liquidity trade-off NPS has compared to PPF, where 100% of the maturity amount is yours, tax-free, with no strings attached.</p>
+      <h2>Partial withdrawal rules — PPF is more flexible than most people realise</h2>
+      <p>PPF allows partial withdrawal from the 7th financial year onward, up to 50% of the balance at the end of the 4th preceding year (or immediately preceding year, whichever is lower) — useful for genuine emergencies without breaking the account. NPS allows partial withdrawal of up to 25% of your own contributions (not the full corpus) after 3 years, and only for specific purposes like higher education, marriage, medical treatment, or buying a first home, capped at 3 withdrawals over the account's lifetime.</p>
     </div>
   ),
 };

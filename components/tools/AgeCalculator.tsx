@@ -38,11 +38,11 @@ export default function AgeCalculator() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Date of Birth</label>
-          <input type="date" className="tool-input" value={dob} onChange={e => setDob(e.target.value)} max={today} />
+          <input type="date" className="tool-input" value={dob} onChange={e => setDob(e.target.value)} max={today}  aria-label="Date of Birth"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Age At Date</label>
-          <input type="date" className="tool-input" value={refDate} onChange={e => setRefDate(e.target.value)} />
+          <input type="date" className="tool-input" value={refDate} onChange={e => setRefDate(e.target.value)}  aria-label="Age At Date"/>
         </div>
       </div>
 

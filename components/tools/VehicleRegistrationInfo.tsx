@@ -12,7 +12,7 @@ export default function VehicleRegistrationInfo() {
   return (
     <div className="space-y-5">
       <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Vehicle Registration Number</label>
-        <input className="tool-input font-mono text-xl tracking-widest uppercase" value={reg} onChange={e=>setReg(e.target.value)} placeholder="DL8CAB1234" maxLength={12} />
+        <input className="tool-input font-mono text-xl tracking-widest uppercase" value={reg} onChange={e => setReg(e.target.value)} aria-label="Vehicle Registration Number" placeholder="DL8CAB1234" maxLength={12} />
       </div>
       {upper.length >= 6 && (
         <div className="bg-gradient-to-br from-brand-950/60 to-dark-800 rounded-2xl border border-brand-400/20 p-5 space-y-3">

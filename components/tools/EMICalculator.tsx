@@ -45,19 +45,19 @@ export default function EMICalculator() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <div>
           <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Loan Amount (₹)</label>
-          <input type="number" className="tool-input" value={principal} onChange={e => setPrincipal(e.target.value)} placeholder="50,00,000" />
+          <input type="number" className="tool-input" value={principal} onChange={e => setPrincipal(e.target.value)} placeholder="50,00,000" aria-label="Loan Amount in Rupees" />
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Interest Rate (% p.a.)</label>
-          <input type="number" className="tool-input" value={rate} onChange={e => setRate(e.target.value)} step="0.05" placeholder="8.5" />
+          <input type="number" className="tool-input" value={rate} onChange={e => setRate(e.target.value)} step="0.05" placeholder="8.5" aria-label="Interest Rate percent per annum" />
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Tenure</label>
           <div className="flex gap-2">
-            <input type="number" className="tool-input flex-1" value={tenure} onChange={e => setTenure(e.target.value)} placeholder="20" />
-            <div className="flex rounded-xl overflow-hidden border" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+            <input type="number" className="tool-input flex-1" value={tenure} onChange={e => setTenure(e.target.value)} placeholder="20" aria-label="Loan Tenure" />
+            <div className="flex rounded-xl overflow-hidden border" style={{ borderColor: 'rgba(255,255,255,0.1)' }} role="group" aria-label="Tenure unit">
               {(['years','months'] as const).map(t => (
-                <button key={t} onClick={() => setTenureType(t)}
+                <button key={t} onClick={() => setTenureType(t)} aria-pressed={tenureType === t}
                   className="px-2.5 text-xs font-semibold transition-all"
                   style={{ background: tenureType === t ? 'rgba(12,147,240,0.2)' : 'rgba(255,255,255,0.03)', color: tenureType === t ? '#36b0fb' : '#64748b' }}>
                   {t === 'years' ? 'Yr' : 'Mo'}

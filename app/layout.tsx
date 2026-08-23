@@ -110,11 +110,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               url: 'https://toolnestin.co.in',
               description: 'Free online tools for India — calculators, converters, and developer utilities',
               inLanguage: 'en-IN',
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: 'https://toolnestin.co.in/search?q={search_term_string}',
-                'query-input': 'required name=search_term_string',
-              },
+              // NOTE: no potentialAction/SearchAction here — the site has no server-rendered
+              // /search route (search is a client-side dropdown filter in Header.tsx only).
+              // A SearchAction previously pointed at /search?q={search_term_string}, which
+              // doesn't exist and Google was flagging as a 404 in Search Console.
             }),
           }}
         />
