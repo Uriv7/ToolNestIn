@@ -26,7 +26,7 @@ export default function TimeZoneConverter() {
         <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">From</label><select className="tool-input" value={from} onChange={e=>setFrom(e.target.value)}>{ZONES.map(z=>(<option key={z.id} value={z.id}>{z.l}</option>))}</select></div>
         <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">To</label><select className="tool-input" value={to} onChange={e=>setTo(e.target.value)}>{ZONES.map(z=>(<option key={z.id} value={z.id}>{z.l}</option>))}</select></div>
       </div>
-      <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Date & Time</label><input type="datetime-local" className="tool-input" value={dateTime} onChange={e=>setDateTime(e.target.value)} /></div>
+      <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Date & Time</label><input type="datetime-local" className="tool-input" value={dateTime} onChange={e => setDateTime(e.target.value)} aria-label="Date & Time" /></div>
       {converted && (<div className="bg-gradient-to-br from-brand-950/60 to-dark-800 rounded-2xl border border-brand-400/20 p-5 text-center space-y-2">
         <div className="text-slate-400 text-sm">{from.split('/')[1].replace('_',' ')}</div>
         <div className="gradient-text font-extrabold text-3xl">{converted}</div>

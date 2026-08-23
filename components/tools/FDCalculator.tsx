@@ -34,15 +34,15 @@ export default function FDCalculator() {
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <div className="sm:col-span-1">
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Principal (₹)</label>
-          <input type="number" className="tool-input" value={principal} onChange={e => setPrincipal(e.target.value)} />
+          <input type="number" className="tool-input" value={principal} onChange={e => setPrincipal(e.target.value)}  aria-label="Principal (₹)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Rate (% p.a.)</label>
-          <input type="number" className="tool-input" value={rate} onChange={e => setRate(e.target.value)} step="0.1" />
+          <input type="number" className="tool-input" value={rate} onChange={e => setRate(e.target.value)} step="0.1"  aria-label="Rate (% p.a.)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Duration (years)</label>
-          <input type="number" className="tool-input" value={years} onChange={e => setYears(e.target.value)} step="0.5" min="0.5" max="10" />
+          <input type="number" className="tool-input" value={years} onChange={e => setYears(e.target.value)} step="0.5" min="0.5" max="10"  aria-label="Duration (years)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Compounding</label>

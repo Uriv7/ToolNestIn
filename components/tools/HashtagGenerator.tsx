@@ -48,7 +48,7 @@ export default function HashtagGenerator() {
             Count: {count}
           </label>
           <input type="range" min="5" max="30" value={count} onChange={e => setCount(+e.target.value)}
-            className="w-full accent-brand-400 mt-2" />
+            className="w-full accent-brand-400 mt-2"  aria-label="Add Your Keywords"/>
           <div className="flex justify-between text-xs text-slate-600 mt-1"><span>5</span><span>30</span></div>
         </div>
       </div>

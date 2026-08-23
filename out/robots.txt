@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /tools/
+Allow: /blog/
+
+# Block Next.js internals
+Disallow: /_next/
+Disallow: /api/
+
+# Googlebot image — allow all OG images
+User-agent: Googlebot-Image
+Allow: /
+
+Sitemap: https://toolnestin.co.in/sitemap.xml

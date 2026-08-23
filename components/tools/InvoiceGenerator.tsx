@@ -25,8 +25,8 @@ export default function InvoiceGenerator() {
         </div>
       </div>
       <div className="grid grid-cols-2 gap-3">
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Invoice No</label><input className="tool-input" value={invNo} onChange={e=>setInvNo(e.target.value)} /></div>
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Date</label><input type="date" className="tool-input" value={date} onChange={e=>setDate(e.target.value)} /></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Invoice No</label><input className="tool-input" value={invNo} onChange={e => setInvNo(e.target.value)} aria-label="Invoice No" /></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Date</label><input type="date" className="tool-input" value={date} onChange={e => setDate(e.target.value)} aria-label="Date" /></div>
       </div>
       <div className="space-y-2">
         <div className="grid grid-cols-12 gap-1 text-xs font-semibold text-slate-400 uppercase tracking-widest px-1"><span className="col-span-5">Description</span><span className="col-span-2">Qty</span><span className="col-span-2">Rate (₹)</span><span className="col-span-2">GST%</span><span className="col-span-1">Del</span></div>

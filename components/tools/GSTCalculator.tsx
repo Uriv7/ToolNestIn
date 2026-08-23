@@ -31,9 +31,9 @@ export default function GSTCalculator() {
       {/* Mode toggle */}
       <div>
         <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Calculation Mode</label>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-2" role="group" aria-label="Calculation Mode">
           {(['exclusive','inclusive'] as const).map(m => (
-            <button key={m} onClick={() => setMode(m)}
+            <button key={m} onClick={() => setMode(m)} aria-pressed={mode === m}
               className="py-2.5 rounded-xl text-sm font-semibold border transition-all"
               style={{
                 background: mode === m ? 'rgba(12,147,240,0.12)' : 'rgba(255,255,255,0.03)',
@@ -58,15 +58,16 @@ export default function GSTCalculator() {
           value={amount}
           onChange={e => setAmount(e.target.value)}
           min="0"
+          aria-label={mode === 'exclusive' ? 'Base Price in Rupees' : 'Total Amount including GST in Rupees'}
         />
       </div>
 
       {/* GST rate */}
       <div>
         <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">GST Rate</label>
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-4 gap-2" role="group" aria-label="GST Rate">
           {SLABS.map(s => (
-            <button key={s} onClick={() => setRate(s)}
+            <button key={s} onClick={() => setRate(s)} aria-pressed={rate === s}
               className="py-2.5 rounded-xl text-sm font-bold border transition-all"
               style={{
                 background: rate === s ? 'rgba(12,147,240,0.12)' : 'rgba(255,255,255,0.03)',
@@ -82,9 +83,9 @@ export default function GSTCalculator() {
       {/* Interstate toggle */}
       <div>
         <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Transaction Type</label>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-2" role="group" aria-label="Transaction Type">
           {([['intra','Intrastate (CGST + SGST)'],['inter','Interstate (IGST)']] as const).map(([v,l]) => (
-            <button key={v} onClick={() => setInter(v)}
+            <button key={v} onClick={() => setInter(v)} aria-pressed={inter === v}
               className="py-2.5 rounded-xl text-sm font-semibold border transition-all"
               style={{
                 background: inter === v ? 'rgba(12,147,240,0.12)' : 'rgba(255,255,255,0.03)',

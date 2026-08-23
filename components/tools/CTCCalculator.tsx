@@ -31,13 +31,14 @@ export default function CTCCalculator() {
 
     const taxableIncome = Math.max(0, grossSalary - stdDed - employeePF - sec80c - nps - profTax);
 
-    // New regime tax
+    // New regime tax — Budget 2025 slabs, effective FY 2025-26 (AY 2026-27)
     const newSlabs = [
-      { max: 300000, rate: 0 },
-      { max: 700000, rate: 5 },
-      { max: 1000000, rate: 10 },
-      { max: 1200000, rate: 15 },
-      { max: 1500000, rate: 20 },
+      { max: 400000, rate: 0 },
+      { max: 800000, rate: 5 },
+      { max: 1200000, rate: 10 },
+      { max: 1600000, rate: 15 },
+      { max: 2000000, rate: 20 },
+      { max: 2400000, rate: 25 },
       { max: Infinity, rate: 30 },
     ];
     const oldSlabs = [
@@ -59,7 +60,11 @@ export default function CTCCalculator() {
 
     const slabs = regime === 'new' ? newSlabs : oldSlabs;
     const baseTax = calcTax(taxableIncome, slabs);
-    const rebate = (regime === 'new' && taxableIncome <= 700000) ? Math.min(baseTax, 25000) :
+    // Rebate u/s 87A — New Regime: Budget 2025 raised this to a ₹12L taxable-income
+    // threshold with a ₹60,000 cap (full rebate up to ₹12L). Old Regime unchanged.
+    // Rebate must apply BEFORE cess, or someone exactly at the threshold would wrongly
+    // show cess still owed even though their real tax liability is nil.
+    const rebate = (regime === 'new' && taxableIncome <= 1200000) ? Math.min(baseTax, 60000) :
                    (regime === 'old' && taxableIncome <= 500000) ? Math.min(baseTax, 12500) : 0;
     const taxAfterRebate = Math.max(0, baseTax - rebate);
     const cess = taxAfterRebate * 0.04;
@@ -97,7 +102,7 @@ export default function CTCCalculator() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="sm:col-span-1">
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Annual CTC (₹)</label>
-          <input type="number" className="tool-input text-lg font-bold" value={ctc} onChange={e => setCtc(e.target.value)} placeholder="1200000" />
+          <input type="number" className="tool-input text-lg font-bold" value={ctc} onChange={e => setCtc(e.target.value)} placeholder="1200000"  aria-label="Annual CTC (₹)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Tax Regime</label>

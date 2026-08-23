@@ -54,6 +54,7 @@ export default function PANValidator() {
           onChange={e => setPan(e.target.value.toUpperCase())}
           placeholder="ABCDE1234F"
           maxLength={10}
+          aria-label="Enter PAN Number"
         />
         <div className="flex justify-between text-xs text-slate-600 mt-1">
           <span>Format: AAAAA9999A</span>

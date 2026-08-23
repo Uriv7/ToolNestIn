@@ -4,7 +4,7 @@ import Logo from '@/components/Logo';
 import { TOOLS } from '@/app/tools/registry';
 
 export const metadata: Metadata = {
-  title: 'About ToolNestIn — Free Online Tools for India',
+  title: 'About Us — Free Online Tools for India',
   description: `ToolNestIn provides ${TOOLS.length}+ free, fast, and private online tools for India — GST Calculator, EMI Calculator, Income Tax Calculator 2026 and more. No signup, no data collection, instant results.`,
   alternates: { canonical: 'https://toolnestin.co.in/about/' },
 };

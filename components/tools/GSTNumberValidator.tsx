@@ -14,7 +14,7 @@ export default function GSTNumberValidator() {
   return (
     <div className="space-y-5">
       <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Enter GSTIN</label>
-        <input className="tool-input font-mono text-lg tracking-widest uppercase" value={gstin} onChange={e=>setGstin(e.target.value)} placeholder="27AAPFU0939F1ZV" maxLength={15} />
+        <input className="tool-input font-mono text-lg tracking-widest uppercase" value={gstin} onChange={e => setGstin(e.target.value)} aria-label="Enter GSTIN" placeholder="27AAPFU0939F1ZV" maxLength={15} />
       </div>
       {g.length===15 && (
         <div className={`rounded-2xl border p-5 space-y-3 ${isValid?'bg-gradient-to-br from-brand-950/60 to-dark-800 border-brand-400/20':'bg-red-500/10 border-red-400/30'}`}>

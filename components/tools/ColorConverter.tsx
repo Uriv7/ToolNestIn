@@ -65,7 +65,7 @@ export default function ColorConverter() {
         </div>
         <div className="flex-1">
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">HEX Code</label>
-          <input type="text" className="tool-input font-mono uppercase" value={hex} onChange={e => handleHexChange(e.target.value)} placeholder="#1EB3F0" maxLength={7} />
+          <input type="text" className="tool-input font-mono uppercase" value={hex} onChange={e => handleHexChange(e.target.value)} placeholder="#1EB3F0" maxLength={7} aria-label="HEX Code" />
           {error && <p className="text-rose-400 text-xs mt-1">{error}</p>}
         </div>
       </div>

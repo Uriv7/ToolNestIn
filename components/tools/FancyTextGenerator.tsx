@@ -30,7 +30,7 @@ export default function FancyTextGenerator() {
       <div>
         <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Your Text</label>
         <input type="text" className="tool-input text-lg font-bold" value={input}
-          onChange={e => setInput(e.target.value)} placeholder="Type your text here..." maxLength={100} />
+          onChange={e => setInput(e.target.value)} placeholder="Type your text here..." maxLength={100}  aria-label="Your Text"/>
       </div>
 
       <div className="space-y-2">

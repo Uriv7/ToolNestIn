@@ -1,22 +1,29 @@
 'use client';
 import { useState, useMemo } from 'react';
 
-const OLD_SLABS = [
-  { limit: 250000,  rate: 0    },
-  { limit: 500000,  rate: 0.05 },
-  { limit: 1000000, rate: 0.20 },
-  { limit: Infinity,rate: 0.30 },
-];
+// Old Regime — exemption threshold varies by age (unchanged by Budget 2025);
+// rate structure above the exemption threshold is the same 5%/20%/30% for all ages.
+function getOldSlabs(age: 'below60' | '60to80' | 'above80') {
+  const exempt = age === 'above80' ? 500000 : age === '60to80' ? 300000 : 250000;
+  return [
+    { limit: exempt,     rate: 0    },
+    { limit: 500000,     rate: 0.05 },
+    { limit: 1000000,    rate: 0.20 },
+    { limit: Infinity,   rate: 0.30 },
+  ];
+}
+// New Regime — Budget 2025 slabs, effective FY 2025-26 (AY 2026-27). Same for all ages.
 const NEW_SLABS = [
-  { limit: 300000,  rate: 0    },
-  { limit: 700000,  rate: 0.05 },
-  { limit: 1000000, rate: 0.10 },
-  { limit: 1200000, rate: 0.15 },
-  { limit: 1500000, rate: 0.20 },
+  { limit: 400000,  rate: 0    },
+  { limit: 800000,  rate: 0.05 },
+  { limit: 1200000, rate: 0.10 },
+  { limit: 1600000, rate: 0.15 },
+  { limit: 2000000, rate: 0.20 },
+  { limit: 2400000, rate: 0.25 },
   { limit: Infinity,rate: 0.30 },
 ];
 
-function calcTax(income: number, slabs: typeof OLD_SLABS) {
+function calcTax(income: number, slabs: ReturnType<typeof getOldSlabs>) {
   let tax = 0, prev = 0;
   for (const slab of slabs) {
     if (income <= prev) break;
@@ -37,27 +44,32 @@ export default function IncomeTaxCalculator() {
     const gross = parseFloat(income) || 0;
     if (!gross) return null;
 
-    const stdDed    = 75000;
+    const stdDedOld = 50000;   // Old Regime standard deduction — unchanged, NOT 75,000
+    const stdDedNew = 75000;   // New Regime standard deduction (Budget 2024, retained in Budget 2025)
     const ded80c    = Math.min(parseFloat(deductions)||0, 150000);
     const hraEx     = parseFloat(hra)||0;
     const otherDed  = parseFloat(other)||0;
 
     // Old regime
-    const oldTaxable = Math.max(0, gross - stdDed - ded80c - hraEx - otherDed);
-    const oldTax     = calcTax(oldTaxable, OLD_SLABS);
-    const oldCess    = oldTax * 0.04;
-    const oldTotal   = oldTax + oldCess;
-    // Rebate 87A
-    const oldRebate  = oldTaxable <= 500000 ? Math.min(oldTax, 12500) : 0;
-    const oldFinal   = Math.max(0, oldTotal - oldRebate);
+    const oldTaxable = Math.max(0, gross - stdDedOld - ded80c - hraEx - otherDed);
+    const oldTax        = calcTax(oldTaxable, getOldSlabs(age));
+    // Rebate 87A (Old Regime) — unchanged by Budget 2025: full rebate up to ₹5L taxable, capped at ₹12,500
+    // Rebate applies BEFORE cess (matches actual computation order under the Income Tax Act)
+    const oldRebateAmt  = oldTaxable <= 500000 ? Math.min(oldTax, 12500) : 0;
+    const oldTaxAfterRebate = Math.max(0, oldTax - oldRebateAmt);
+    const oldCess        = oldTaxAfterRebate * 0.04;
+    const oldFinal        = oldTaxAfterRebate + oldCess;
 
     // New regime
-    const newTaxable = Math.max(0, gross - stdDed);
-    const newTax     = calcTax(newTaxable, NEW_SLABS);
-    const newCess    = newTax * 0.04;
-    const newTotal   = newTax + newCess;
-    const newRebate  = newTaxable <= 700000 ? Math.min(newTax, 25000) : 0;
-    const newFinal   = Math.max(0, newTotal - newRebate);
+    const newTaxable = Math.max(0, gross - stdDedNew);
+    const newTax        = calcTax(newTaxable, NEW_SLABS);
+    // Rebate 87A (New Regime) — Budget 2025: full rebate up to ₹12L taxable income, capped at ₹60,000
+    // (tax on exactly ₹12L under the slabs above is exactly ₹60,000, so effective tax is nil up to ₹12L —
+    // rebate must be applied before cess, or someone at exactly ₹12L would wrongly show cess still owed)
+    const newRebateAmt  = newTaxable <= 1200000 ? Math.min(newTax, 60000) : 0;
+    const newTaxAfterRebate = Math.max(0, newTax - newRebateAmt);
+    const newCess        = newTaxAfterRebate * 0.04;
+    const newFinal        = newTaxAfterRebate + newCess;
 
     const better = oldFinal < newFinal ? 'old' : 'new';
     const saving  = Math.abs(oldFinal - newFinal);
@@ -76,28 +88,28 @@ export default function IncomeTaxCalculator() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
           <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Annual Gross Income (₹)</label>
-          <input type="number" className="tool-input text-lg" value={income} onChange={e => setIncome(e.target.value)} placeholder="1,200,000" />
+          <input type="number" className="tool-input text-lg" value={income} onChange={e => setIncome(e.target.value)} placeholder="1,200,000" aria-label="Annual Gross Income in Rupees" />
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">80C Investments (₹, max 1.5L)</label>
-          <input type="number" className="tool-input" value={deductions} onChange={e => setDed(e.target.value)} placeholder="150000" />
+          <input type="number" className="tool-input" value={deductions} onChange={e => setDed(e.target.value)} placeholder="150000" aria-label="Section 80C Investments in Rupees, maximum 1.5 lakh" />
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">HRA Exemption (₹)</label>
-          <input type="number" className="tool-input" value={hra} onChange={e => setHra(e.target.value)} placeholder="0" />
+          <input type="number" className="tool-input" value={hra} onChange={e => setHra(e.target.value)} placeholder="0" aria-label="HRA Exemption in Rupees" />
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Other Deductions (₹)</label>
-          <input type="number" className="tool-input" value={other} onChange={e => setOther(e.target.value)} placeholder="0" />
+          <input type="number" className="tool-input" value={other} onChange={e => setOther(e.target.value)} placeholder="0" aria-label="Other Deductions in Rupees" />
         </div>
       </div>
 
       {/* Age */}
       <div>
         <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Age Group</label>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-3 gap-2" role="group" aria-label="Age Group">
           {([['below60','Below 60'],['60to80','60–80 yrs'],['above80','Above 80']] as const).map(([v,l]) => (
-            <button key={v} onClick={() => setAge(v)}
+            <button key={v} onClick={() => setAge(v)} aria-pressed={age === v}
               className="py-2 rounded-xl text-sm font-semibold border transition-all"
               style={{ background: age===v ? 'rgba(12,147,240,0.12)' : 'rgba(255,255,255,0.03)', borderColor: age===v ? 'rgba(12,147,240,0.4)' : 'rgba(255,255,255,0.08)', color: age===v ? '#36b0fb' : '#64748b' }}>
               {l}
@@ -118,7 +130,7 @@ export default function IncomeTaxCalculator() {
               <p className="text-sm font-bold" style={{ color: result.better === 'new' ? '#34d399' : '#60a5fa' }}>
                 {result.better === 'new' ? 'New Regime' : 'Old Regime'} saves you {fmtFull(result.saving)} this year
               </p>
-              <p className="text-xs text-slate-500 mt-0.5">FY 2025-26 · Standard deduction ₹75,000 included in both</p>
+              <p className="text-xs text-slate-500 mt-0.5">FY 2025-26 · Std. deduction: ₹50,000 (Old) / ₹75,000 (New)</p>
             </div>
           </div>
 

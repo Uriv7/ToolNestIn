@@ -16,10 +16,10 @@ export default function SalaryHikeCalculator() {
     <div className="space-y-5">
       <div className="flex gap-2">{([['calc','Calculate New CTC'],['find','Find Hike %']] as const).map(([m,l])=>(<button key={m} onClick={()=>setMode(m)} className={`flex-1 py-2.5 rounded-xl text-sm font-semibold border transition ${mode===m?'bg-brand-500/20 border-brand-400/50 text-brand-300':'bg-white/3 border-white/10 text-slate-500'}`}>{l}</button>))}</div>
       <div className="grid grid-cols-2 gap-3">
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Current CTC (₹ per year)</label><input type="number" className="tool-input" value={oldCTC} onChange={e=>setOldCTC(e.target.value)} placeholder="1000000" /></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Current CTC (₹ per year)</label><input type="number" className="tool-input" value={oldCTC} onChange={e => setOldCTC(e.target.value)} aria-label="Current CTC (₹ per year)" placeholder="1000000" /></div>
         {mode==='calc'
-          ? <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Hike %</label><input type="number" className="tool-input" value={hikePct} onChange={e=>setHikePct(e.target.value)} placeholder="20" /></div>
-          : <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">New CTC (₹ per year)</label><input type="number" className="tool-input" value={newCTC} onChange={e=>setNewCTC(e.target.value)} placeholder="1200000" /></div>
+          ? <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Hike %</label><input type="number" className="tool-input" value={hikePct} onChange={e => setHikePct(e.target.value)} aria-label="Hike %" placeholder="20" /></div>
+          : <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">New CTC (₹ per year)</label><input type="number" className="tool-input" value={newCTC} onChange={e => setNewCTC(e.target.value)} aria-label="New CTC (₹ per year)" placeholder="1200000" /></div>
         }
       </div>
       {((mode==='calc'&&calcNew>0)||(mode==='find'&&calcPct!==0)) && (

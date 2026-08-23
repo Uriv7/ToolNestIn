@@ -25,7 +25,20 @@ export default function BMICalculator() {
     return          { label: 'Obese', color: '#f87171', bar: 90 };
   };
 
+  // Asia-Pacific classification (WHO Western Pacific Region / widely used in India) —
+  // lower cutoffs than the standard WHO scale, since research (including ICMR-backed
+  // studies) shows South Asians face higher metabolic risk at lower BMI values.
+  const getAsiaPacificCategory = (b: number) => {
+    if (b <= 0) return null;
+    if (b < 18.5) return { label: 'Underweight', color: '#60a5fa' };
+    if (b < 23)   return { label: 'Normal weight ✓', color: '#34d399' };
+    if (b < 25)   return { label: 'Overweight (at risk)', color: '#fbbf24' };
+    if (b < 30)   return { label: 'Obese I', color: '#f97316' };
+    return          { label: 'Obese II', color: '#f87171' };
+  };
+
   const cat = getCategory(bmi);
+  const catAP = getAsiaPacificCategory(bmi);
 
   return (
     <div className="space-y-6">
@@ -44,18 +57,18 @@ export default function BMICalculator() {
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">
             Weight ({unit === 'metric' ? 'kg' : 'lbs'})
           </label>
-          <input type="number" className="tool-input" value={weight} onChange={e => setWeight(e.target.value)} placeholder={unit === 'metric' ? '70' : '154'} />
+          <input type="number" className="tool-input" value={weight} onChange={e => setWeight(e.target.value)} placeholder={unit === 'metric' ? '70' : '154'}  aria-label="Height (cm)"/>
         </div>
         {unit === 'metric' ? (
           <div>
             <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Height (cm)</label>
-            <input type="number" className="tool-input" value={height} onChange={e => setHeight(e.target.value)} placeholder="175" />
+            <input type="number" className="tool-input" value={height} onChange={e => setHeight(e.target.value)} placeholder="175"  aria-label="Feet"/>
           </div>
         ) : (
           <div className="grid grid-cols-2 gap-2">
             <div>
               <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Feet</label>
-              <input type="number" className="tool-input" value={height} onChange={e => setHeight(e.target.value)} placeholder="5" />
+              <input type="number" className="tool-input" value={height} onChange={e => setHeight(e.target.value)} placeholder="5"  aria-label="Inches"/>
             </div>
             <div>
               <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Inches</label>
@@ -92,6 +105,20 @@ export default function BMICalculator() {
               <span key={s}>{s}</span>
             ))}
           </div>
+
+          {/* Dual classification — WHO standard vs Asia-Pacific scale */}
+          {catAP && (
+            <div className="mt-5 pt-5 border-t border-white/10 grid grid-cols-2 gap-3">
+              <div className="text-center">
+                <p className="text-[10px] uppercase tracking-widest text-slate-600 mb-1">WHO Standard</p>
+                <p className="text-sm font-bold" style={{ color: cat!.color }}>{cat!.label}</p>
+              </div>
+              <div className="text-center">
+                <p className="text-[10px] uppercase tracking-widest text-slate-600 mb-1">Asia-Pacific Scale</p>
+                <p className="text-sm font-bold" style={{ color: catAP.color }}>{catAP.label}</p>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>

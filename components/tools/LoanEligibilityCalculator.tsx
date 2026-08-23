@@ -17,10 +17,10 @@ export default function LoanEligibilityCalculator() {
   return (
     <div className="space-y-5">
       <div className="grid grid-cols-2 gap-3">
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Net Monthly Income (₹)</label><input type="number" className="tool-input" value={netIncome} onChange={e => setNetIncome(e.target.value)} placeholder="100000" /></div>
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Existing EMIs (₹/mo)</label><input type="number" className="tool-input" value={existingEmi} onChange={e => setExistingEmi(e.target.value)} placeholder="0" /></div>
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Interest Rate (% p.a.)</label><input type="number" className="tool-input" value={rate} onChange={e => setRate(e.target.value)} step="0.05" /></div>
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Loan Tenure (years)</label><input type="number" className="tool-input" value={tenure} onChange={e => setTenure(e.target.value)} min="1" max="30" /></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Net Monthly Income (₹)</label><input type="number" className="tool-input" value={netIncome} onChange={e => setNetIncome(e.target.value)} placeholder="100000"  aria-label="Net Monthly Income (₹)"/></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Existing EMIs (₹/mo)</label><input type="number" className="tool-input" value={existingEmi} onChange={e => setExistingEmi(e.target.value)} placeholder="0"  aria-label="Existing EMIs (₹/mo)"/></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Interest Rate (% p.a.)</label><input type="number" className="tool-input" value={rate} onChange={e => setRate(e.target.value)} step="0.05"  aria-label="Interest Rate (% p.a.)"/></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Loan Tenure (years)</label><input type="number" className="tool-input" value={tenure} onChange={e => setTenure(e.target.value)} min="1" max="30"  aria-label="Loan Tenure (years)"/></div>
       </div>
       <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Bank FOIR Limit: {foirPct}%</label>
         <input type="range" min="40" max="60" step="5" value={foirPct} onChange={e => setFoirPct(e.target.value)} className="w-full" />

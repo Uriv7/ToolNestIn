@@ -77,22 +77,22 @@ export default function WorkingDaysCalculator() {
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Start Date</label>
-            <input type="date" className="tool-input" value={start} onChange={e => setStart(e.target.value)} />
+            <input type="date" className="tool-input" value={start} onChange={e => setStart(e.target.value)}  aria-label="Start Date"/>
           </div>
           <div>
             <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">End Date</label>
-            <input type="date" className="tool-input" value={end} onChange={e => setEnd(e.target.value)} />
+            <input type="date" className="tool-input" value={end} onChange={e => setEnd(e.target.value)}  aria-label="End Date"/>
           </div>
         </div>
       ) : (
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">From Date</label>
-            <input type="date" className="tool-input" value={start} onChange={e => setStart(e.target.value)} />
+            <input type="date" className="tool-input" value={start} onChange={e => setStart(e.target.value)}  aria-label="From Date"/>
           </div>
           <div>
             <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Add Working Days</label>
-            <input type="number" className="tool-input" value={addDays} onChange={e => setAddDays(e.target.value)} placeholder="e.g. 30" min="1" />
+            <input type="number" className="tool-input" value={addDays} onChange={e => setAddDays(e.target.value)} placeholder="e.g. 30" min="1"  aria-label="Add Working Days"/>
           </div>
         </div>
       )}

@@ -28,19 +28,19 @@ export default function HRACalculator() {
       <div className="grid grid-cols-2 gap-3">
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Basic Salary (₹/mo)</label>
-          <input type="number" className="tool-input" placeholder="40000" value={basic} onChange={e => setBasic(e.target.value)} />
+          <input type="number" className="tool-input" placeholder="40000" value={basic} onChange={e => setBasic(e.target.value)}  aria-label="Basic Salary (₹/mo)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">DA (₹/mo, if any)</label>
-          <input type="number" className="tool-input" placeholder="0" value={da} onChange={e => setDa(e.target.value)} />
+          <input type="number" className="tool-input" placeholder="0" value={da} onChange={e => setDa(e.target.value)}  aria-label="DA (₹/mo, if any)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">HRA Received (₹/mo)</label>
-          <input type="number" className="tool-input" placeholder="20000" value={hraReceived} onChange={e => setHraReceived(e.target.value)} />
+          <input type="number" className="tool-input" placeholder="20000" value={hraReceived} onChange={e => setHraReceived(e.target.value)}  aria-label="HRA Received (₹/mo)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Rent Paid (₹/mo)</label>
-          <input type="number" className="tool-input" placeholder="18000" value={rentPaid} onChange={e => setRentPaid(e.target.value)} />
+          <input type="number" className="tool-input" placeholder="18000" value={rentPaid} onChange={e => setRentPaid(e.target.value)}  aria-label="Rent Paid (₹/mo)"/>
         </div>
       </div>
       <div className="flex gap-2">

@@ -88,7 +88,7 @@ export default function UnitConverter() {
       <div className="flex gap-3">
         <div className="flex-1">
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Value</label>
-          <input type="number" className="tool-input text-lg" value={value} onChange={e => setValue(e.target.value)} />
+          <input type="number" className="tool-input text-lg" value={value} onChange={e => setValue(e.target.value)}  aria-label="Value"/>
         </div>
         <div className="flex-1">
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">From Unit</label>

@@ -68,21 +68,21 @@ export default function SIPCalculator() {
         {mode === 'sip' ? (
           <div>
             <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Monthly SIP (₹)</label>
-            <input type="number" className="tool-input" value={monthly} onChange={e => setMonthly(e.target.value)} placeholder="5000" />
+            <input type="number" className="tool-input" value={monthly} onChange={e => setMonthly(e.target.value)} placeholder="5000" aria-label="Monthly SIP Amount in Rupees" />
           </div>
         ) : (
           <div>
             <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Lump Sum Amount (₹)</label>
-            <input type="number" className="tool-input" value={lumpsum} onChange={e => setLumpsum(e.target.value)} placeholder="100000" />
+            <input type="number" className="tool-input" value={lumpsum} onChange={e => setLumpsum(e.target.value)} placeholder="100000" aria-label="Lump Sum Amount in Rupees" />
           </div>
         )}
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Expected Return (% p.a.)</label>
-          <input type="number" className="tool-input" value={rate} onChange={e => setRate(e.target.value)} placeholder="12" step="0.5" />
+          <input type="number" className="tool-input" value={rate} onChange={e => setRate(e.target.value)} placeholder="12" step="0.5" aria-label="Expected Annual Return percent" />
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Time Period (years)</label>
-          <input type="number" className="tool-input" value={years} onChange={e => setYears(e.target.value)} placeholder="10" min="1" max="40" />
+          <input type="number" className="tool-input" value={years} onChange={e => setYears(e.target.value)} placeholder="10" min="1" max="40" aria-label="Time Period in years" />
         </div>
       </div>
 

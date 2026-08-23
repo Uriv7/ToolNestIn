@@ -36,6 +36,7 @@ export default function RegexTester() {
     { label: 'PIN Code', pattern: '[1-9][0-9]{5}' },
     { label: 'Date (DD/MM/YYYY)', pattern: '\\d{2}/\\d{2}/\\d{4}' },
     { label: 'URL', pattern: 'https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}' },
+    { label: 'IP Address', pattern: '\\b(?:(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\\b' },
   ];
 
   const toggleFlag = (f: string) => setFlags(prev => prev.includes(f) ? prev.replace(f, '') : prev + f);

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — ToolNestIn',
+  title: 'Privacy Policy',
   description: 'ToolNestIn privacy policy. We collect no personal data. All tools run entirely in your browser. Read our complete data policy.',
   alternates: { canonical: 'https://toolnestin.co.in/privacy/' },
 };

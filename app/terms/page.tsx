@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — ToolNestIn',
+  title: 'Terms of Service',
   description: 'Terms of Service for ToolNestIn. Free to use, no account required. Read our complete terms.',
   alternates: { canonical: 'https://toolnestin.co.in/terms/' },
 };

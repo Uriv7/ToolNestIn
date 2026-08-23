@@ -16,7 +16,7 @@ export default function ImageToBase64() {
   return (
     <div className="space-y-5">
       <div className="flex gap-2"><button className="flex-1 py-2.5 rounded-xl text-sm font-semibold bg-brand-500/20 border border-brand-400/50 text-brand-300">🖼️ Image → Base64</button></div>
-      <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Upload Image (PNG, JPG, WEBP, SVG, GIF)</label><input type="file" accept="image/*" onChange={handleFile} className="tool-input text-sm" /></div>
+      <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Upload Image (PNG, JPG, WEBP, SVG, GIF)</label><input type="file" accept="image/*" onChange={handleFile} className="tool-input text-sm" aria-label="Upload Image (PNG, JPG, WEBP, SVG, GIF)" /></div>
       {b64 && (<>
         <div className="flex items-center gap-3 text-sm text-slate-400"><span>{mime}</span><span>·</span><span>{(size/1024).toFixed(1)} KB original</span><span>·</span><span>{(b64.length/1024).toFixed(1)} KB base64 (+{Math.round((b64.length/size-1)*100)}%)</span></div>
         <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Base64 Data URI</label><textarea readOnly className="tool-input h-24 font-mono text-xs" value={b64} /><button onClick={()=>navigator.clipboard.writeText(b64)} className="mt-2 px-4 py-2 text-sm font-semibold bg-white/3 border border-white/10 rounded-lg text-slate-300 hover:text-white transition">📋 Copy Data URI</button></div>

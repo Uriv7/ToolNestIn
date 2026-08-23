@@ -24,7 +24,7 @@ export default function CurrencyConverter() {
       {loading && <p className="text-slate-400 text-sm text-center">Fetching live rates...</p>}
       <div className="grid grid-cols-3 gap-3 items-end">
         <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">From</label><select className="tool-input" value={from} onChange={e=>setFrom(e.target.value)}>{all.map(c=><option key={c} value={c}>{c}</option>)}</select></div>
-        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Amount</label><input type="number" className="tool-input" value={amount} onChange={e=>setAmount(e.target.value)} /></div>
+        <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Amount</label><input type="number" className="tool-input" value={amount} onChange={e => setAmount(e.target.value)} aria-label="Amount" /></div>
         <div><label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">To</label><select className="tool-input" value={to} onChange={e=>setTo(e.target.value)}>{all.map(c=><option key={c} value={c}>{c}</option>)}</select></div>
       </div>
       {result > 0 && (<div className="bg-gradient-to-br from-brand-950/60 to-dark-800 rounded-2xl border border-brand-400/20 p-5 text-center space-y-2">

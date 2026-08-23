@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Contact — ToolNestIn',
+  title: 'Contact',
   description: 'Get in touch with the ToolNestIn team. Suggest a tool, report a bug, or ask about partnerships.',
   alternates: { canonical: 'https://toolnestin.co.in/contact/' },
 };

@@ -46,15 +46,15 @@ export default function FuelCostCalculator() {
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Distance (km)</label>
-          <input type="number" className="tool-input" value={distance} onChange={e => setDistance(e.target.value)} placeholder="30" />
+          <input type="number" className="tool-input" value={distance} onChange={e => setDistance(e.target.value)} placeholder="30"  aria-label="Distance (km)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Mileage (km/l)</label>
-          <input type="number" className="tool-input" value={mileage} onChange={e => setMileage(e.target.value)} placeholder="15" />
+          <input type="number" className="tool-input" value={mileage} onChange={e => setMileage(e.target.value)} placeholder="15"  aria-label="Mileage (km/l)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">{FUEL_PRICES[fuelType].label}</label>
-          <input type="number" className="tool-input" value={fuelPrice} onChange={e => setFuelPrice(e.target.value)} />
+          <input type="number" className="tool-input" value={fuelPrice} onChange={e => setFuelPrice(e.target.value)}  aria-label="Trips per Month"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Trips per Month</label>

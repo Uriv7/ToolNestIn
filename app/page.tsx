@@ -81,12 +81,6 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-
-        {/* Top Ad */}
-        <div className="mt-10">
-          <p className="ad-label">Advertisement</p>
-          <AdUnit slot="auto-2" center />
-        </div>
       </section>
 
 
@@ -186,6 +180,14 @@ export default function HomePage() {
           );
         })}
       </section>
+
+      {/* Top Ad — moved here, after the full tool grid, so the hero + trending
+          searches + complete tool directory (the homepage's actual primary
+          content) are never pushed below an ad */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-4">
+        <p className="ad-label">Advertisement</p>
+        <AdUnit slot="auto-2" center />
+      </div>
 
       {/* ── WHY TOOLNESTIN ── */}
       <section style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>

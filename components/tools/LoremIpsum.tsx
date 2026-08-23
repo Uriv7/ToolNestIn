@@ -35,7 +35,7 @@ export default function LoremIpsum() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="sm:col-span-1">
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Count</label>
-          <input type="number" className="tool-input" value={count} onChange={e => setCount(Math.max(1, parseInt(e.target.value) || 1))} min="1" max="50" />
+          <input type="number" className="tool-input" value={count} onChange={e => setCount(Math.max(1, parseInt(e.target.value) || 1))} min="1" max="50" aria-label="Count" />
         </div>
         <div className="sm:col-span-2">
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Type</label>

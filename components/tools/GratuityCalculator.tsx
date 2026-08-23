@@ -37,19 +37,19 @@ export default function GratuityCalculator() {
       <div className="grid grid-cols-2 gap-3">
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Last Basic Salary (₹/mo)</label>
-          <input type="number" className="tool-input" placeholder="50000" value={basic} onChange={e => setBasic(e.target.value)} />
+          <input type="number" className="tool-input" placeholder="50000" value={basic} onChange={e => setBasic(e.target.value)}  aria-label="Last Basic Salary (₹/mo)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">DA (₹/mo, if any)</label>
-          <input type="number" className="tool-input" placeholder="0" value={da} onChange={e => setDa(e.target.value)} />
+          <input type="number" className="tool-input" placeholder="0" value={da} onChange={e => setDa(e.target.value)}  aria-label="DA (₹/mo, if any)"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Years of Service</label>
-          <input type="number" className="tool-input" placeholder="10" value={years} onChange={e => setYears(e.target.value)} min="5" />
+          <input type="number" className="tool-input" placeholder="10" value={years} onChange={e => setYears(e.target.value)} min="5"  aria-label="Years of Service"/>
         </div>
         <div>
           <label className="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Months (in addition)</label>
-          <input type="number" className="tool-input" placeholder="6" value={months} onChange={e => setMonths(e.target.value)} min="0" max="11" />
+          <input type="number" className="tool-input" placeholder="6" value={months} onChange={e => setMonths(e.target.value)} min="0" max="11"  aria-label="Months (in addition)"/>
         </div>
       </div>
       {y > 0 && y < 5 && <p className="text-amber-400 text-sm text-center">⚠️ Minimum 5 years of service required for gratuity eligibility.</p>}

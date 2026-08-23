@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ARTICLES } from './articles';
 
 export const metadata: Metadata = {
-  title: 'Guides & Resources — ToolNestIn',
+  title: 'Guides & Resources',
   description: 'Free guides on Indian tax, finance, and productivity. Income tax tips, GST calculation guides, EMI planning resources for India 2026.',
   alternates: { canonical: 'https://toolnestin.co.in/blog/' },
 };
